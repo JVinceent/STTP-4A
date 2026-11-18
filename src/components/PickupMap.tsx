@@ -6,14 +6,14 @@ type Plot = { pts: string; fill: string; farm?: { n: number; x: number; y: numbe
 // harvesting this round; the dashed line is the shared truck route.
 const PLOTS: Plot[] = [
   { pts: "0,0 500,0 470,110 0,150", fill: "url(#pm-rows-dark)" },
-  { pts: "0,150 470,110 440,230 0,260", fill: "#FFD21F", farm: { n: 1, x: 225, y: 188, style: "yellow" } },
+  { pts: "0,150 470,110 440,230 0,260", fill: "#E75613", farm: { n: 1, x: 225, y: 188, style: "yellow" } },
   { pts: "0,260 440,230 405,340 0,370", fill: "url(#pm-rows-mid)" },
   { pts: "0,370 405,340 385,440 0,440", fill: "#1f6b35" },
   { pts: "535,0 820,0 790,170 500,190", fill: "#226f36" },
   { pts: "820,0 1200,0 1200,130 800,150", fill: "url(#pm-rows-mid)", farm: { n: 5, x: 1000, y: 72, style: "light" } },
   { pts: "500,190 790,170 770,300 470,320", fill: "url(#pm-rows-light)", farm: { n: 2, x: 632, y: 246, style: "light" } },
   { pts: "800,150 1200,130 1200,280 780,300", fill: "url(#pm-rows-dark)" },
-  { pts: "470,320 770,300 750,440 430,440", fill: "#FFD21F", farm: { n: 3, x: 598, y: 378, style: "yellow" } },
+  { pts: "470,320 770,300 750,440 430,440", fill: "#E75613", farm: { n: 3, x: 598, y: 378, style: "yellow" } },
   { pts: "780,300 1200,280 1200,440 760,440", fill: "url(#pm-rows-mid)", farm: { n: 4, x: 985, y: 366, style: "light" } },
 ];
 
@@ -42,8 +42,8 @@ export function PickupMap() {
             </pattern>
           ))}
           <pattern id="pm-farm-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
-            <rect width="10" height="10" fill="#FFD21F" />
-            <rect width="10" height="3" fill="#F2C200" />
+            <rect width="10" height="10" fill="#E75613" />
+            <rect width="10" height="3" fill="#C94A0F" />
           </pattern>
         </defs>
 

@@ -79,7 +79,7 @@ export function HeroVisual() {
                   <IconPin className="h-3.5 w-3.5" />
                 </span>
               </div>
-              <span className="self-start rounded-lg bg-yellow px-2.5 py-1.5 text-[0.9rem] font-bold leading-snug text-ink">
+              <span className="self-start rounded-lg bg-accent px-2.5 py-1.5 text-[0.9rem] font-bold leading-snug text-ink">
                 {chip.value}
               </span>
             </div>

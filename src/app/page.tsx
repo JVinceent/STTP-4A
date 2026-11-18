@@ -33,7 +33,7 @@ export default function Home() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-yellow focus:px-4 focus:py-2 focus:font-bold"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:font-bold"
       >
         Skip to content
       </a>
@@ -66,7 +66,7 @@ function Button({
   variant?: "primary" | "secondary" | "dark";
 }) {
   const styles = {
-    primary: "bg-yellow text-ink shadow-[0_10px_24px_-10px_rgb(20_26_22/0.55)] hover:bg-[#ffdb4d]",
+    primary: "bg-accent text-ink shadow-[0_10px_24px_-10px_rgb(20_26_22/0.55)] hover:bg-[#f06a2c]",
     secondary: "border border-line bg-card text-ink hover:border-ink/40",
     dark: "bg-ink text-card hover:bg-ink-2",
   }[variant];
@@ -152,7 +152,7 @@ function Story() {
               {!last && <span className="absolute top-7 bottom-0 w-px bg-line" />}
               <span
                 className={`relative mt-2 h-4 w-4 rounded-full border-[3px] ${
-                  last ? "border-ink bg-yellow" : m.placeholder ? "border-line bg-card" : "border-green bg-card"
+                  last ? "border-ink bg-accent" : m.placeholder ? "border-line bg-card" : "border-green bg-card"
                 }`}
               />
             </div>
@@ -230,7 +230,7 @@ function Services() {
             return (
               <Reveal as="li" key={c.key} delay={i * 0.06} className="flex flex-col rounded-[24px] border border-line bg-card p-3">
                 <div className="flex items-center gap-2 p-2">
-                  <span className="inline-flex h-9 items-center gap-2 rounded-xl bg-yellow px-3 text-[0.95rem] font-bold text-ink">
+                  <span className="inline-flex h-9 items-center gap-2 rounded-xl bg-accent px-3 text-[0.95rem] font-bold text-ink">
                     <Icon className="h-[18px] w-[18px]" />
                     {c.title}
                   </span>
@@ -285,7 +285,7 @@ function HowItWorks() {
             <div className="mt-4 flex flex-1 flex-col justify-between gap-4 rounded-2xl bg-paper p-4 sm:flex-row sm:items-center">
               <p className="text-[1.05rem] text-ink">
                 Buyer offer:{" "}
-                <span className="ml-1 inline-block rounded-lg bg-yellow px-2.5 py-1 font-bold">₱30 per kg</span>
+                <span className="ml-1 inline-block rounded-lg bg-accent px-2.5 py-1 font-bold">₱30 per kg</span>
               </p>
               <span className="inline-flex h-11 select-none items-center justify-center gap-2 rounded-xl bg-ink px-5 font-bold text-card">
                 {HOW.manager.action}
@@ -309,7 +309,7 @@ function HowItWorks() {
             <div className="mt-4 flex flex-1 flex-wrap items-center justify-between gap-3 rounded-2xl bg-ink p-4 text-card">
               <p className="text-[1.05rem]">
                 He receives{" "}
-                <span className="ml-1 inline-block rounded-lg bg-yellow px-2.5 py-1 text-[1.35rem] font-extrabold tracking-[-0.02em] text-ink">
+                <span className="ml-1 inline-block rounded-lg bg-accent px-2.5 py-1 text-[1.35rem] font-extrabold tracking-[-0.02em] text-ink">
                   {HOW.farmer.total}
                 </span>
               </p>
@@ -349,7 +349,7 @@ function Plans() {
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-[1.5rem] font-bold">{p.name}</h3>
                 {p.highlight && (
-                  <span className="rounded-lg bg-yellow px-2.5 py-1 text-[0.85rem] font-bold text-ink">All four</span>
+                  <span className="rounded-lg bg-accent px-2.5 py-1 text-[0.85rem] font-bold text-ink">All four</span>
                 )}
               </div>
               <p className={`mb-10 mt-3 text-[1.0625rem] ${p.highlight ? "text-[#D7DCD4]" : "text-muted"}`}>{p.body}</p>
@@ -367,7 +367,7 @@ function Plans() {
             <p className="mt-4 text-[clamp(2.4rem,5vw,3.4rem)] font-extrabold leading-none tracking-[-0.04em]">8–12%</p>
             <p className="mt-3 text-muted">of the pooled freight, about ₱1,120–₱1,680 on a ₱14,000 truck.</p>
           </div>
-          <div className="flex flex-col rounded-[28px] bg-yellow p-6 text-ink sm:p-8">
+          <div className="flex flex-col rounded-[28px] bg-accent p-6 text-ink sm:p-8">
             <h3 className="text-[1.2rem] font-bold">{PLANS.pilot.title}</h3>
             <p className="mt-4 max-w-[22ch] text-[clamp(1.6rem,3vw,2.1rem)] font-bold leading-[1.15] tracking-[-0.03em]">
               {PLANS.pilot.body}
@@ -537,7 +537,7 @@ function Footer() {
             className="absolute -bottom-[0.18em] left-3 text-[clamp(4.5rem,19vw,17rem)] font-extrabold leading-none tracking-[-0.06em] sm:left-6"
           >
             <span className="text-card">Coo</span>
-            <span className="text-yellow">PERA</span>
+            <span className="text-accent">PERA</span>
           </p>
         </div>
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

@@ -93,7 +93,7 @@ export function Nav() {
             href="#contact"
             aria-current={active === "contact" ? "location" : undefined}
             className={`hidden h-10 items-center rounded-xl px-4 text-[0.95rem] font-bold transition-colors sm:inline-flex ${
-              active === "contact" ? "bg-yellow text-ink ring-2 ring-ink" : "bg-ink text-card hover:bg-ink-2"
+              active === "contact" ? "bg-accent text-ink ring-2 ring-ink" : "bg-ink text-card hover:bg-ink-2"
             }`}
           >
             Get in touch
