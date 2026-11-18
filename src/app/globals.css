@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #141a16;
+  --color-ink-2: #1f2721;
+  --color-paper: #f5f3ec;
+  --color-card: #fffdf6;
+  --color-line: #d8d2c2;
+  --color-yellow: #ffd21f;
+  --color-green: #1b7a43;
+  --color-mint: #4ade80;
+  --color-muted: #4a5148;
+  --color-field-1: #1f6b35;
+  --color-field-2: #2f8a45;
+  --color-field-3: #5aad4e;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-chip: 0 1px 2px rgb(20 26 22 / 0.06), 0 12px 32px -8px rgb(20 26 22 / 0.18);
+  --shadow-soft: 0 1px 2px rgb(20 26 22 / 0.04), 0 24px 48px -24px rgb(20 26 22 / 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-feature-settings: "ss01";
+}
+
+/* Headings: tight, bold, balanced */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Fixed-height drawn art below the fold: skip painting until near view.
+   Heights are explicit, so this never shifts layout or anchor offsets. */
+.cv-art {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 440px;
+}
+
+/* Isometric plane used by the hero and section visuals */
+.iso-plane {
+  transform: rotateX(56deg) rotateZ(-42deg);
+  transform-style: flat;
+}
+
+.tile-slab {
+  box-shadow:
+    6px 6px 0 0 #155228,
+    18px 22px 40px -8px rgb(20 26 22 / 0.35);
+}
+
+.dash-ring {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='26' ry='26' stroke='%23A8A08C' stroke-width='2' stroke-dasharray='7%2c 8' stroke-linecap='round'/%3e%3c/svg%3e");
+  border-radius: 26px;
+}
+
+/* One orchestrated load moment for the hero visual */
+@keyframes tile-in {
+  from {
+    opacity: 0;
+    transform: translate(-22px, -22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tile-in {
+  animation: tile-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.chip-in {
+  animation: chip-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile-in,
+  .chip-in {
+    animation: none;
+  }
+}
+
+.placeholder-box {
+  background-color: #efece2;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 10px,
+    rgb(216 210 194 / 0.55) 10px 11px
+  );
 }

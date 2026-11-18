@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CooPERA website
 
-## Getting Started
-
-First, run the development server:
+One-page site for CooPERA (Kape & Paste, DOST-SEI STTP+ 2026). Next.js App Router + TypeScript + Tailwind, static, no backend.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build (deploy target: Vercel)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | File |
+|---|---|
+| All copy, numbers and placeholders | `src/content.ts` |
+| Page sections | `src/app/page.tsx` |
+| Nav + scroll-spy | `src/components/Nav.tsx` |
+| Hero isometric visual | `src/components/HeroVisual.tsx` |
+| "See it work" map | `src/components/PickupMap.tsx` |
+| Drawn field art (SVG, no stock photos) | `src/components/FieldArt.tsx` |
+| Logo | `src/components/Logo.tsx`, `public/icon.svg` |
+| Colors and fonts | `src/app/globals.css` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Fill in the placeholders
 
-## Learn More
+Search `src/content.ts` for `[`:
 
-To learn more about Next.js, take a look at the following resources:
+- `[TEAM EMAIL]`, `[Facebook]`, `[LinkedIn]` (top of the file). Once real, turn the Facebook/LinkedIn chips in `Contact()` into links.
+- `[role]` for each team member (in `page.tsx`, `Team()`).
+- `[Bootcamp 1: add one sentence]`, `[Bootcamp 6: add one sentence]` in `STORY`.
+- `[₱___ / month]` stays until pricing is set after the pilot.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Photos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Put photos in `public/photos/`. Any slot showing `[Photo: /photos/<name>.jpg]` is waiting for that file: add the file, then set `src: "/photos/<name>.jpg"` and a real `alt` in `content.ts`. Strip location data before adding phone photos (for example `magick in.jpg -auto-orient -strip -resize 1800x1800> out.jpg`).
 
-## Deploy on Vercel
+Photos in use now: `team.jpg`, `san-pedro-mpc-visit.jpg`, `san-pedro-mpc-interview.jpg`, `sidc-visit.jpg`. Also copied but unused: `team-2.jpg`, `sidc-building.jpg`, `bootcamp-session.jpg`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Still needed: `dost-consultation.jpg`, `farmer-interview-1.jpg`, `bootcamp-1.jpg` … `bootcamp-6.jpg`, `choosing-the-problem.jpg`, `one-concept.jpg`, `demo-day.jpg`, and one portrait per member (`team-<first>-<last>.jpg`, names listed in `TEAM`).
