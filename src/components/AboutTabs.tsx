@@ -26,7 +26,7 @@ export function AboutTabs({ tabs }: { tabs: Tab[] }) {
       <div
         role="tablist"
         aria-label="About CooPERA"
-        className="inline-flex w-full max-w-[520px] rounded-2xl border border-line bg-card p-1.5 sm:w-auto"
+        className="inline-flex w-full max-w-[520px] rounded-none border border-line bg-card p-1 sm:w-auto shadow-sm"
       >
         {tabs.map((t, i) => {
           const selected = i === index;
@@ -44,7 +44,7 @@ export function AboutTabs({ tabs }: { tabs: Tab[] }) {
               tabIndex={selected ? 0 : -1}
               onClick={() => setIndex(i)}
               onKeyDown={onKeyDown}
-              className={`flex-1 whitespace-nowrap rounded-xl px-3 py-2.5 text-[0.95rem] font-medium transition-colors sm:flex-none sm:px-6 ${
+              className={`flex-1 whitespace-nowrap rounded-none px-4 py-2 text-[0.92rem] font-bold tracking-tight transition-colors sm:flex-none sm:px-6 ${
                 selected ? "bg-ink text-card" : "text-muted hover:text-ink"
               }`}
             >
@@ -62,7 +62,7 @@ export function AboutTabs({ tabs }: { tabs: Tab[] }) {
           aria-labelledby={`tab-${t.id}`}
           hidden={i !== index}
           tabIndex={0}
-          className="mt-8 rounded-[28px] focus-visible:outline-offset-4"
+          className="mt-8 rounded-none focus-visible:outline-offset-4"
         >
           {t.content}
         </div>

@@ -59,32 +59,32 @@ function StepChipButton({
       type="button"
       aria-pressed={active}
       onClick={onSelect}
-      className={`group flex min-h-11 flex-col gap-2 rounded-2xl border p-2.5 text-left shadow-chip backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-150 active:scale-[0.98] ${
+      className={`group flex min-h-11 flex-col gap-2 rounded-none border p-2.5 text-left shadow-sm backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-150 active:scale-[0.98] ${
         active
-          ? "border-green bg-white ring-2 ring-green/25"
-          : "border-line/80 bg-white/95 hover:border-ink/40"
+          ? "border-ink bg-white ring-1 ring-ink/40"
+          : "border-line/90 bg-white/95 hover:border-ink/60"
       } ${className}`}
     >
       <span className="flex w-full items-center gap-2">
         <span
-          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors ${
-            active ? "bg-green text-white" : "bg-paper text-green group-hover:bg-green/12"
+          className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-none transition-colors ${
+            active ? "bg-ink text-white" : "bg-paper text-green group-hover:bg-green/12"
           }`}
         >
-          <Icon className="h-4 w-4" />
+          <Icon className="h-3.5 w-3.5" />
         </span>
-        <span className="text-[0.95rem] font-bold leading-tight text-ink">{label}</span>
+        <span className="text-[0.92rem] font-bold leading-tight text-ink">{label}</span>
         <span
-          className={`ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors ${
+          className={`ml-auto flex h-5 w-5 shrink-0 items-center justify-center rounded-none transition-colors ${
             active ? "bg-ink text-card" : "bg-green/15 text-green"
           }`}
         >
-          <IconPin className="h-3.5 w-3.5" />
+          <IconPin className="h-3 w-3" />
         </span>
       </span>
       <span
-        className={`self-start rounded-lg px-2.5 py-1 text-[0.875rem] font-bold leading-snug transition-colors ${
-          active ? "surface-lime text-ink" : "bg-paper text-ink"
+        className={`self-start rounded-none px-2.5 py-0.5 text-[0.84rem] font-bold leading-snug transition-colors ${
+          active ? "bg-[#bef648] text-ink" : "bg-paper text-ink"
         }`}
       >
         {value}
@@ -583,7 +583,7 @@ export function HeroVisual() {
         </div>
 
         {webglFailed ? (
-          <div className="relative z-10 flex h-full items-center justify-center rounded-[24px] border border-line bg-paper p-6 text-center">
+          <div className="relative z-10 flex h-full items-center justify-center rounded-none border border-line bg-paper p-6 text-center">
             <p className="max-w-[30ch] text-[1rem] text-muted">
               Nine-plot cooperative cluster: forecast harvests, pool one truck, match buyers, and text receipts.
             </p>

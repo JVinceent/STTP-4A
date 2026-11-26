@@ -26,13 +26,13 @@ export function ValidationFarmerCard() {
   const current = CROP_NOTES[idx];
 
   return (
-    <div className="relative flex min-h-[196px] flex-col justify-between overflow-hidden rounded-[18px] bg-[#0b130e] p-4 text-card sm:aspect-[4/3]">
+    <div className="relative flex min-h-[196px] flex-col justify-between overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-4 text-card sm:aspect-[4/3] shadow-sm">
       <Image
         src="/stock/farm-landscape.jpg"
         alt=""
         fill
         sizes="(min-width: 1024px) 300px, 45vw"
-        className="object-cover object-center opacity-50"
+        className="object-cover object-center opacity-45"
       />
       <div
         aria-hidden="true"
@@ -40,18 +40,18 @@ export function ValidationFarmerCard() {
       />
 
       <div className="relative z-10 flex items-center justify-between gap-2">
-        <p className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[0.75rem] font-semibold text-mint">
-          <span className="h-1.5 w-1.5 rounded-full bg-mint" aria-hidden="true" />
+        <p className="inline-flex items-center gap-1.5 rounded-none border border-white/15 bg-white/5 px-2.5 py-0.5 text-[0.72rem] font-bold uppercase tracking-wider text-[#bef648]">
+          <span className="h-1.5 w-1.5 rounded-none bg-[#bef648]" aria-hidden="true" />
           Farmer Field Notes
         </p>
-        <span className="text-[0.75rem] font-semibold text-[#D7DCD4]">Nov 2026</span>
+        <span className="text-[0.72rem] font-mono tracking-wider text-[#D7DCD4]">NOV 2026</span>
       </div>
 
       <div className="relative z-10 my-2">
         <p className="text-[1.05rem] font-extrabold tracking-[-0.02em] text-card">
           {current.place}
         </p>
-        <p className="mt-1 text-[0.84rem] leading-snug text-[#D7DCD4]">
+        <p className="mt-1 text-[0.85rem] leading-snug text-[#D7DCD4]">
           {current.note}
         </p>
       </div>
@@ -65,9 +65,9 @@ export function ValidationFarmerCard() {
               type="button"
               aria-pressed={active}
               onClick={() => setIdx(i)}
-              className={`min-h-8 rounded-lg px-2.5 py-1 text-[0.75rem] font-bold transition-colors ${
+              className={`min-h-8 rounded-none px-2.5 py-1 text-[0.75rem] font-bold transition-colors ${
                 active
-                  ? "surface-lime text-ink"
+                  ? "bg-[#bef648] text-ink"
                   : "bg-white/10 text-card hover:bg-white/20"
               }`}
             >

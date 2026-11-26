@@ -63,86 +63,99 @@ section[id] {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-green);
-  outline-offset: 3px;
-  border-radius: 6px;
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+  border-radius: 0px;
 }
 
-/* Bulletproof brand gradients, luminous spheres & ambient blurs */
+/* Luxury solid surfaces (Zero gradient on cards/buttons, strictly solid & architectural) */
 .surface-hero {
   background-color: #ffffff;
-  background-image:
-    radial-gradient(62% 72% at 88% 14%, rgb(190 246 72 / 0.24) 0%, rgb(134 239 172 / 0.14) 40%, transparent 72%),
-    radial-gradient(50% 60% at 10% 88%, rgb(163 230 53 / 0.14) 0%, transparent 65%),
-    linear-gradient(155deg, #ffffff 0%, #f5faf1 60%, #edf7e6 100%);
 }
 
 .surface-obsidian {
   background-color: #0b130e;
-  background-image:
-    radial-gradient(80% 70% at 92% 8%, rgb(132 204 22 / 0.16) 0%, transparent 55%),
-    radial-gradient(70% 65% at 12% 95%, rgb(34 197 94 / 0.12) 0%, transparent 58%),
-    linear-gradient(145deg, #0b130e 0%, #132319 52%, #0d1911 100%);
 }
 
 .surface-emerald {
-  background-color: #103820;
-  background-image:
-    radial-gradient(70% 70% at 88% 14%, rgb(190 246 72 / 0.18) 0%, transparent 55%),
-    linear-gradient(135deg, #103820 0%, #1b5c33 55%, #113d22 100%);
+  background-color: #0e2a18;
 }
 
 .surface-lime {
-  background-color: #9ee832;
-  background-image:
-    radial-gradient(75% 75% at 16% 12%, rgb(242 255 186 / 0.45) 0%, transparent 55%),
-    linear-gradient(135deg, #c8fa4e 0%, #9ee832 52%, #78cc22 100%);
+  background-color: #bef648;
 }
 
 .surface-lime-soft {
-  background-color: #eefbe1;
-  background-image:
-    radial-gradient(75% 75% at 85% 15%, rgb(190 246 72 / 0.35) 0%, transparent 60%),
-    linear-gradient(135deg, #eefbe1 0%, #dbf7c5 100%);
+  background-color: #eef7eb;
 }
 
-.surface-cta-green {
-  background-color: #9ce835;
-  background-image: linear-gradient(135deg, #bef648 0%, #86dc29 100%);
+.surface-cta-primary {
+  background-color: #0b130e;
+  color: #ffffff;
 }
 
-.surface-cta-green:hover {
-  background-image: linear-gradient(135deg, #ccff59 0%, #96ea38 100%);
+.surface-cta-primary:hover {
+  background-color: #16241b;
 }
 
+.surface-cta-lime {
+  background-color: #bef648;
+  color: #0b130e;
+}
+
+.surface-cta-lime:hover {
+  background-color: #b2ee3b;
+}
+
+/* Luxury typography gradients (Gradients ONLY on fonts) */
 .text-gradient-green {
-  background-image: linear-gradient(115deg, #15803d 0%, #22c55e 52%, #65a30d 100%);
+  background-image: linear-gradient(120deg, #092612 0%, #15803d 42%, #22c55e 80%, #65a30d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .text-gradient-lime {
-  background-image: linear-gradient(115deg, #d9ff66 0%, #84cc16 55%, #4ade80 100%);
+  background-image: linear-gradient(120deg, #efffc2 0%, #bef648 45%, #6ee7b7 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.orb-sphere {
-  background-image: radial-gradient(circle at 35% 30%, #e0ff82 0%, #84cc16 46%, #15803d 100%);
-  filter: blur(18px);
+.text-gradient-luxury {
+  background-image: linear-gradient(125deg, #09170e 0%, #166534 38%, #15803d 72%, #84cc16 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-emerald {
+  background-image: linear-gradient(120deg, #052e16 0%, #15803d 50%, #4ade80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Floating 3D realistic spheres (with specular highlights & depth-of-field blur) */
+.sphere-3d-gloss {
+  background: radial-gradient(circle at 32% 28%, #f7ffe3 0%, #bef648 30%, #4ade80 62%, #15803d 85%, #052e16 100%);
+  box-shadow: inset -6px -8px 16px rgba(5, 46, 22, 0.65), 0 20px 40px -10px rgba(11, 19, 14, 0.22);
+}
+
+.sphere-3d-blur {
+  background: radial-gradient(circle at 35% 30%, #f2ffd1 0%, #a3e635 32%, #22c55e 65%, #0f4a24 100%);
+  filter: blur(20px);
   pointer-events: none;
 }
 
 .orb-ambient {
   background-image: radial-gradient(
     circle,
-    rgba(132, 204, 22, 0.24) 0%,
-    rgba(34, 197, 94, 0.14) 48%,
+    rgba(132, 204, 22, 0.16) 0%,
+    rgba(34, 197, 94, 0.08) 50%,
     transparent 72%
   );
-  filter: blur(44px);
+  filter: blur(48px);
   pointer-events: none;
 }
 

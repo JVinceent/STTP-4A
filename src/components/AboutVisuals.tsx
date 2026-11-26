@@ -28,35 +28,31 @@ export function MissionPanel({ text }: { text: string }) {
   const current = MISSION_MODES[mode];
 
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-line bg-[#0b130e] p-5 text-card sm:p-8 lg:p-10">
+    <div className="relative overflow-hidden rounded-none border border-line bg-[#0b130e] p-5 text-card sm:p-8 lg:p-10 shadow-sm">
       <Image
         src="/stock/farmer-harvest.jpg"
         alt=""
         fill
         sizes="(min-width: 1280px) 1216px, 94vw"
-        className="object-cover object-center opacity-55"
+        className="object-cover object-center opacity-45"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0b130e]/90 via-[#123620]/82 to-[#0b130e]/90"
-      />
-      <span
-        aria-hidden="true"
-        className="orb-ambient absolute -right-16 -top-16 h-72 w-72 rounded-full"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0b130e]/92 via-[#123620]/85 to-[#0b130e]/92"
       />
 
       <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
-        <div className="flex flex-col justify-center rounded-[24px] border border-white/60 bg-white/95 p-6 text-ink shadow-soft backdrop-blur-md sm:p-8">
-          <p className="text-[0.95rem] font-bold text-green">Our mission</p>
+        <div className="flex flex-col justify-center rounded-none border border-white/60 bg-white/95 p-6 text-ink shadow-sm backdrop-blur-md sm:p-8">
+          <p className="text-[0.88rem] font-bold uppercase tracking-wider text-green">Our mission</p>
           <p className="mt-3 text-[1.2rem] font-medium leading-[1.45] tracking-[-0.01em] text-ink sm:text-[1.4rem]">
             {text}
           </p>
         </div>
 
-        <div className="surface-obsidian flex flex-col justify-between rounded-[24px] border border-white/15 p-5 sm:p-6">
+        <div className="flex flex-col justify-between rounded-none border border-white/15 bg-[#0f2115] p-5 sm:p-6 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div
-              className="inline-flex rounded-xl border border-white/15 bg-white/5 p-1"
+              className="inline-flex rounded-none border border-white/15 bg-white/5 p-1"
               role="group"
               aria-label="Compare selling models"
             >
@@ -64,9 +60,9 @@ export function MissionPanel({ text }: { text: string }) {
                 type="button"
                 aria-pressed={mode === "without"}
                 onClick={() => setMode("without")}
-                className={`min-h-10 rounded-lg px-3 py-1.5 text-[0.875rem] font-bold transition-colors ${
+                className={`min-h-9 rounded-none px-3.5 py-1 text-[0.85rem] font-bold transition-colors ${
                   mode === "without"
-                    ? "surface-lime text-ink"
+                    ? "bg-[#bef648] text-ink"
                     : "text-[#d7e5d9] hover:text-card"
                 }`}
               >
@@ -76,27 +72,27 @@ export function MissionPanel({ text }: { text: string }) {
                 type="button"
                 aria-pressed={mode === "with"}
                 onClick={() => setMode("with")}
-                className={`min-h-10 rounded-lg px-3 py-1.5 text-[0.875rem] font-bold transition-colors ${
+                className={`min-h-9 rounded-none px-3.5 py-1 text-[0.85rem] font-bold transition-colors ${
                   mode === "with"
-                    ? "surface-lime text-ink"
+                    ? "bg-[#bef648] text-ink"
                     : "text-[#d7e5d9] hover:text-card"
                 }`}
               >
                 With CooPERA
               </button>
             </div>
-            <span className="text-[0.82rem] font-semibold text-mint">
+            <span className="text-[0.82rem] font-mono tracking-wider uppercase text-[#bef648]">
               {current.badge}
             </span>
           </div>
 
-          <dl className="mt-5 space-y-3">
+          <dl className="mt-5 space-y-2.5">
             {current.rows.map((row) => (
               <div
                 key={row.label}
-                className="flex flex-col gap-0.5 rounded-xl border border-white/10 bg-white/5 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                className="flex flex-col gap-0.5 rounded-none border border-white/10 bg-white/5 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
               >
-                <dt className="text-[0.875rem] text-[#C9D0C6]">{row.label}</dt>
+                <dt className="text-[0.85rem] text-[#C9D0C6]">{row.label}</dt>
                 <dd className="text-[0.95rem] font-bold text-card">{row.value}</dd>
               </div>
             ))}
@@ -139,34 +135,30 @@ export function VisionPanel({ text }: { text: string }) {
   const stage = VISION_STAGES[stageIdx];
 
   return (
-    <div className="relative overflow-hidden rounded-[28px] border border-line bg-[#103820] p-5 text-card sm:p-8 lg:p-10">
+    <div className="relative overflow-hidden rounded-none border border-line bg-[#0e2a18] p-5 text-card sm:p-8 lg:p-10 shadow-sm">
       <Image
         src="/stock/rice-field.jpg"
         alt=""
         fill
         sizes="(min-width: 1280px) 1216px, 94vw"
-        className="object-cover object-center opacity-55"
+        className="object-cover object-center opacity-45"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0e321c]/90 via-[#144728]/82 to-[#0b130e]/90"
-      />
-      <span
-        aria-hidden="true"
-        className="orb-ambient absolute -bottom-16 -left-16 h-72 w-72 rounded-full"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0e321c]/92 via-[#144728]/85 to-[#0b130e]/92"
       />
 
       <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
-        <div className="flex flex-col justify-center rounded-[24px] border border-white/60 bg-white/95 p-6 text-ink shadow-soft backdrop-blur-md sm:p-8">
-          <p className="text-[0.95rem] font-bold text-green">Our vision</p>
+        <div className="flex flex-col justify-center rounded-none border border-white/60 bg-white/95 p-6 text-ink shadow-sm backdrop-blur-md sm:p-8">
+          <p className="text-[0.88rem] font-bold uppercase tracking-wider text-green">Our vision</p>
           <p className="mt-3 text-[1.2rem] font-medium leading-[1.45] tracking-[-0.01em] text-ink sm:text-[1.4rem]">
             {text}
           </p>
         </div>
 
-        <div className="surface-obsidian flex flex-col justify-between rounded-[24px] border border-white/15 p-5 sm:p-6">
+        <div className="flex flex-col justify-between rounded-none border border-white/15 bg-[#0b1b11] p-5 sm:p-6 shadow-sm">
           <div>
-            <p className="text-[0.875rem] font-semibold text-mint">
+            <p className="text-[0.82rem] font-mono tracking-wider uppercase text-[#bef648]">
               Harvest-to-Receipt flow · Click a stage
             </p>
             <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -179,9 +171,9 @@ export function VisionPanel({ text }: { text: string }) {
                     type="button"
                     aria-pressed={active}
                     onClick={() => setStageIdx(idx)}
-                    className={`flex min-h-11 items-center justify-center gap-1.5 rounded-xl border px-2.5 py-2 text-[0.85rem] font-bold transition-[background-color,border-color,transform] duration-150 active:scale-[0.98] ${
+                    className={`flex min-h-11 items-center justify-center gap-1.5 rounded-none border px-2.5 py-2 text-[0.84rem] font-bold transition-[background-color,border-color,transform] duration-150 active:scale-[0.98] ${
                       active
-                        ? "surface-lime border-transparent text-ink"
+                        ? "bg-[#bef648] border-transparent text-ink"
                         : "border-white/15 bg-white/5 text-card hover:bg-white/10"
                     }`}
                   >
@@ -194,14 +186,14 @@ export function VisionPanel({ text }: { text: string }) {
           </div>
 
           <div className="mt-5 space-y-2.5">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-3.5">
-              <p className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold uppercase tracking-wider text-mint">
+            <div className="rounded-none border border-white/10 bg-white/5 p-3.5">
+              <p className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold uppercase tracking-wider text-[#bef648]">
                 <IconCheck className="h-3.5 w-3.5" /> For the farmer
               </p>
               <p className="mt-1 text-[0.95rem] text-card">{stage.farmer}</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-3.5">
-              <p className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold uppercase tracking-wider text-mint">
+            <div className="rounded-none border border-white/10 bg-white/5 p-3.5">
+              <p className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold uppercase tracking-wider text-[#bef648]">
                 <IconCheck className="h-3.5 w-3.5" /> For the cooperative
               </p>
               <p className="mt-1 text-[0.95rem] text-card">{stage.coop}</p>

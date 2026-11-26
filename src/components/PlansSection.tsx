@@ -49,13 +49,13 @@ export function PlansSection() {
   return (
     <div>
       {/* Interactive module configurator */}
-      <div className="mt-10 rounded-[24px] border border-line bg-card p-4 sm:p-5">
+      <div className="mt-10 rounded-none border border-line bg-card p-4 sm:p-5 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-[0.95rem] font-bold text-ink">
+          <p className="text-[0.92rem] font-bold uppercase tracking-wider text-ink">
             Select the modules your cooperative needs ({count} of 4 active):
           </p>
-          <span className="rounded-full border border-green/30 bg-green/10 px-3 py-1 text-[0.85rem] font-bold text-green">
-            Recommended tier: {activeTierName}
+          <span className="rounded-none border border-green/30 bg-green/10 px-3 py-1 text-[0.82rem] font-mono font-bold uppercase text-green">
+            Recommended: {activeTierName}
           </span>
         </div>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -68,13 +68,13 @@ export function PlansSection() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => toggleModule(c.key)}
-                className={`flex min-h-11 items-center gap-2 rounded-xl border px-3.5 py-2 text-[0.92rem] font-bold transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
+                className={`flex min-h-11 items-center gap-2 rounded-none border px-3.5 py-2 text-[0.9rem] font-bold transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
                   active
-                    ? "surface-obsidian border-transparent text-card"
-                    : "border-line bg-paper text-ink hover:border-ink/40"
+                    ? "border-ink bg-ink text-card"
+                    : "border-line bg-paper text-ink hover:border-ink"
                 }`}
               >
-                <Icon className={`h-4 w-4 shrink-0 ${active ? "text-lime" : "text-green"}`} />
+                <Icon className={`h-4 w-4 shrink-0 ${active ? "text-[#bef648]" : "text-green"}`} />
                 <span>{c.title}</span>
               </button>
             );
@@ -89,28 +89,28 @@ export function PlansSection() {
           return (
             <li
               key={p.name}
-              className={`flex flex-col rounded-[28px] p-6 transition-[background-color,border-color,box-shadow] duration-200 sm:p-8 ${
+              className={`flex flex-col rounded-none p-6 transition-[background-color,border-color,box-shadow] duration-200 sm:p-8 shadow-sm ${
                 isMatched
-                  ? "surface-obsidian text-card shadow-soft ring-2 ring-lime"
+                  ? "border border-white/10 bg-[#0b130e] text-card ring-1 ring-[#bef648]"
                   : "border border-line bg-card text-ink"
               }`}
             >
               <div className="flex items-center justify-between gap-3">
-                <h3 className="text-[1.5rem] font-bold">{p.name}</h3>
+                <h3 className="text-[1.5rem] font-extrabold tracking-[-0.03em]">{p.name}</h3>
                 {isMatched && (
-                  <span className="surface-lime rounded-lg px-2.5 py-1 text-[0.82rem] font-bold text-ink">
+                  <span className="rounded-none bg-[#bef648] px-2.5 py-1 text-[0.78rem] font-mono font-bold uppercase tracking-wider text-ink">
                     {p.name === "Full package" ? "All four" : "Selected"}
                   </span>
                 )}
               </div>
-              <p className={`mt-3 text-[1.0625rem] ${isMatched ? "text-[#D7DCD4]" : "text-muted"}`}>
+              <p className={`mt-3 text-[1.02rem] ${isMatched ? "text-[#D7DCD4]" : "text-muted"}`}>
                 {p.body}
               </p>
 
               <ul className="mb-8 mt-6 space-y-2.5 text-[0.95rem]">
                 {p.features.map((feat) => (
                   <li key={feat} className="flex items-start gap-2.5">
-                    <IconCheck className={`mt-1 h-4 w-4 shrink-0 ${isMatched ? "text-mint" : "text-green"}`} />
+                    <IconCheck className={`mt-1 h-4 w-4 shrink-0 ${isMatched ? "text-[#bef648]" : "text-green"}`} />
                     <span className={isMatched ? "text-card/90" : "text-ink"}>{feat}</span>
                   </li>
                 ))}
@@ -119,13 +119,13 @@ export function PlansSection() {
               <div className={`mt-auto flex items-end justify-between gap-3 border-t pt-5 ${isMatched ? "border-white/15" : "border-line"}`}>
                 <div>
                   <p className="text-[1.35rem] font-extrabold tracking-[-0.02em]">{p.priceTitle}</p>
-                  <p className={`mt-1 text-[0.95rem] ${isMatched ? "text-mint" : "text-green"}`}>{p.priceNote}</p>
+                  <p className={`mt-1 text-[0.92rem] font-mono ${isMatched ? "text-[#bef648]" : "text-green"}`}>{p.priceNote}</p>
                 </div>
                 {!isMatched && (
                   <button
                     type="button"
                     onClick={() => selectTierPreset(p.name)}
-                    className="inline-flex min-h-11 shrink-0 items-center rounded-xl border border-line bg-paper px-3.5 text-[0.875rem] font-bold text-ink transition-colors hover:border-ink/40"
+                    className="inline-flex min-h-11 shrink-0 items-center rounded-none border border-line bg-paper px-3.5 text-[0.875rem] font-bold text-ink transition-colors hover:border-ink"
                   >
                     Preview
                   </button>
@@ -138,15 +138,15 @@ export function PlansSection() {
 
       {/* Interactive freight estimator + Pilot CTA */}
       <div className="mt-4 grid gap-4 lg:grid-cols-2">
-        <div className="rounded-[28px] border border-line bg-card p-6 sm:p-8">
+        <div className="rounded-none border border-line bg-card p-6 sm:p-8 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="text-[1.2rem] font-bold">{PLANS.tripFee.title}</h3>
-            <span className="rounded-full border border-line bg-paper px-3 py-1 text-[0.82rem] font-semibold text-muted">
+            <span className="rounded-none border border-line bg-paper px-3 py-1 text-[0.8rem] font-mono font-bold uppercase text-muted">
               8–12% of pooled freight
             </span>
           </div>
-          <p className="mt-4 text-[clamp(2rem,4.4vw,3rem)] font-extrabold leading-none tracking-[-0.04em] tabular-nums text-ink">
-            ₱{minFee.toLocaleString()}–₱{maxFee.toLocaleString()}
+          <p className="mt-4 text-[clamp(2.2rem,4.4vw,3.2rem)] font-extrabold leading-none tracking-[-0.04em] tabular-nums text-ink">
+            <span className="text-gradient-luxury">₱{minFee.toLocaleString()}–₱{maxFee.toLocaleString()}</span>
           </p>
           <p className="mt-2.5 text-[0.98rem] text-muted">
             On a ₱{truckCost.toLocaleString()} truck across {farmCount} farms (~₱{perFarmFreight.toLocaleString()} freight share per farm).
@@ -154,7 +154,7 @@ export function PlansSection() {
 
           <div className="mt-5 grid gap-3 border-t border-line pt-4 sm:grid-cols-2">
             <div>
-              <p className="text-[0.85rem] font-bold text-ink">Truck trip cost</p>
+              <p className="text-[0.85rem] font-bold uppercase tracking-wider text-ink">Truck trip cost</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {TRUCK_COSTS.map((cost) => (
                   <button
@@ -162,10 +162,10 @@ export function PlansSection() {
                     type="button"
                     aria-pressed={truckCost === cost}
                     onClick={() => setTruckCost(cost)}
-                    className={`min-h-10 rounded-lg border px-2.5 text-[0.85rem] font-bold transition-colors ${
+                    className={`min-h-10 rounded-none border px-2.5 text-[0.85rem] font-bold transition-colors ${
                       truckCost === cost
                         ? "border-ink bg-ink text-card"
-                        : "border-line bg-paper text-ink hover:border-ink/40"
+                        : "border-line bg-paper text-ink hover:border-ink"
                     }`}
                   >
                     ₱{(cost / 1000).toFixed(0)}k
@@ -174,7 +174,7 @@ export function PlansSection() {
               </div>
             </div>
             <div>
-              <p className="text-[0.85rem] font-bold text-ink">Farms sharing truck</p>
+              <p className="text-[0.85rem] font-bold uppercase tracking-wider text-ink">Farms sharing truck</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {FARM_COUNTS.map((n) => (
                   <button
@@ -182,10 +182,10 @@ export function PlansSection() {
                     type="button"
                     aria-pressed={farmCount === n}
                     onClick={() => setFarmCount(n)}
-                    className={`min-h-10 rounded-lg border px-2.5 text-[0.85rem] font-bold transition-colors ${
+                    className={`min-h-10 rounded-none border px-2.5 text-[0.85rem] font-bold transition-colors ${
                       farmCount === n
                         ? "border-ink bg-ink text-card"
-                        : "border-line bg-paper text-ink hover:border-ink/40"
+                        : "border-line bg-paper text-ink hover:border-ink"
                     }`}
                   >
                     {n} farms
@@ -196,21 +196,17 @@ export function PlansSection() {
           </div>
         </div>
 
-        <div className="surface-lime relative flex flex-col justify-between overflow-hidden rounded-[28px] p-6 text-ink sm:p-8">
-          <span
-            aria-hidden="true"
-            className="orb-sphere absolute -bottom-12 -right-12 h-44 w-44 rounded-full opacity-40"
-          />
+        <div className="relative flex flex-col justify-between overflow-hidden rounded-none border border-ink/20 bg-[#bef648] p-6 text-ink sm:p-8 shadow-sm">
           <div className="relative z-10">
-            <h3 className="text-[1.2rem] font-bold">{PLANS.pilot.title}</h3>
-            <p className="mt-4 max-w-[22ch] text-[clamp(1.6rem,3vw,2.1rem)] font-bold leading-[1.15] tracking-[-0.03em]">
+            <h3 className="text-[1.15rem] font-bold uppercase tracking-wider text-ink">{PLANS.pilot.title}</h3>
+            <p className="mt-4 max-w-[22ch] text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-[1.15] tracking-[-0.035em]">
               {PLANS.pilot.body}
             </p>
           </div>
           <div className="relative z-10 mt-6">
             <a
               href="#contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-ink px-5 text-[1rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-ink-2 active:scale-[0.98]"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-6 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] shadow-sm"
             >
               {PLANS.pilot.cta} <IconArrow />
             </a>

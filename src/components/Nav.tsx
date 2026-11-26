@@ -63,7 +63,7 @@ export function Nav() {
       }`}
     >
       <nav aria-label="Main" className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <a href="#home" className="inline-flex min-h-11 shrink-0 items-center rounded-lg" onClick={() => setOpen(false)}>
+        <a href="#home" className="inline-flex min-h-11 shrink-0 items-center rounded-none" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
@@ -75,10 +75,10 @@ export function Nav() {
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? "location" : undefined}
-                  className={`inline-flex h-11 items-center rounded-xl border px-4 text-[0.95rem] font-medium transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
+                  className={`inline-flex h-10 items-center rounded-none border px-4 text-[0.92rem] font-bold tracking-tight transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
                     isActive
                       ? "border-ink bg-ink text-card"
-                      : "border-line bg-card text-ink hover:border-ink/40"
+                      : "border-line bg-card text-ink hover:border-ink"
                   }`}
                 >
                   {item.label}
@@ -92,8 +92,10 @@ export function Nav() {
           <a
             href="#contact"
             aria-current={active === "contact" ? "location" : undefined}
-            className={`hidden h-11 items-center rounded-xl px-4 text-[0.95rem] font-bold transition-[background-color,color,transform] duration-150 active:scale-[0.98] sm:inline-flex ${
-              active === "contact" ? "bg-accent text-ink ring-2 ring-ink" : "bg-ink text-card hover:bg-ink-2"
+            className={`hidden h-10 items-center rounded-none px-4 text-[0.92rem] font-bold transition-[background-color,color,transform] duration-150 active:scale-[0.98] sm:inline-flex ${
+              active === "contact"
+                ? "bg-accent text-ink ring-1 ring-ink"
+                : "bg-ink text-card hover:bg-[#1a281e]"
             }`}
           >
             Get in touch
@@ -101,7 +103,7 @@ export function Nav() {
           <button
             ref={menuButton}
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-card transition-transform duration-150 active:scale-[0.98] lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-none border border-line bg-card transition-transform duration-150 active:scale-[0.98] lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -128,7 +130,7 @@ export function Nav() {
                   href={`#${item.id}`}
                   onClick={() => setOpen(false)}
                   aria-current={isActive ? "location" : undefined}
-                  className={`flex h-12 items-center rounded-xl border px-4 font-medium ${
+                  className={`flex h-11 items-center rounded-none border px-4 font-bold text-[0.95rem] ${
                     isActive ? "border-ink bg-ink text-card" : "border-line bg-card text-ink"
                   }`}
                 >
@@ -141,7 +143,7 @@ export function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 flex h-12 items-center justify-center rounded-xl bg-ink font-bold text-card"
+              className="mt-1 flex h-11 items-center justify-center rounded-none bg-ink font-bold text-card"
             >
               Get in touch
             </a>

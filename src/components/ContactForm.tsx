@@ -113,10 +113,10 @@ export function ContactForm() {
       <div
         role="status"
         aria-live="polite"
-        className="rounded-[28px] border border-line bg-card p-6 shadow-soft sm:p-8"
+        className="rounded-none border border-line bg-card p-6 shadow-sm sm:p-8"
       >
         <div className="flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green text-white">
+          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-[#0b130e] text-[#bef648]">
             <IconCheck className="h-5 w-5" />
           </span>
           <div>
@@ -129,7 +129,7 @@ export function ContactForm() {
           </div>
         </div>
 
-        <dl className="mt-6 space-y-2.5 rounded-2xl border border-line bg-paper/70 p-4 text-[0.95rem]">
+        <dl className="mt-6 space-y-2.5 rounded-none border border-line bg-paper/70 p-4 text-[0.95rem]">
           <div className="flex flex-wrap justify-between gap-2">
             <dt className="text-muted">Inquiry type</dt>
             <dd className="font-bold text-ink">{submitted.role}</dd>
@@ -158,11 +158,11 @@ export function ContactForm() {
           <button
             type="button"
             onClick={handleCopy}
-            className="surface-cta-green inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-[1rem] font-bold text-ink shadow-[0_12px_26px_-10px_rgb(22_101_52/0.45)] transition-[filter,transform] duration-150 active:scale-[0.98]"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-6 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] shadow-sm"
           >
             {copied ? (
               <>
-                <IconCheck className="h-4 w-4" />
+                <IconCheck className="h-4 w-4 text-[#bef648]" />
                 Copied details
               </>
             ) : (
@@ -172,7 +172,7 @@ export function ContactForm() {
           <button
             type="button"
             onClick={handleReset}
-            className="inline-flex h-12 items-center justify-center rounded-xl border border-line bg-paper px-5 text-[1rem] font-bold text-ink transition-[border-color,transform] duration-150 hover:border-ink/40 active:scale-[0.98]"
+            className="inline-flex h-12 items-center justify-center rounded-none border border-line bg-paper px-6 text-[0.98rem] font-bold text-ink transition-[border-color,transform] duration-150 hover:border-ink active:scale-[0.98]"
           >
             Send another inquiry
           </button>
@@ -185,11 +185,11 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-[28px] border border-line bg-card p-6 shadow-soft sm:p-8"
+      className="rounded-none border border-line bg-card p-6 shadow-sm sm:p-8"
     >
       <div className="space-y-5">
         <fieldset>
-          <legend className="block text-[0.95rem] font-bold text-ink">
+          <legend className="block text-[0.92rem] font-bold uppercase tracking-wider text-ink">
             Inquiry type
           </legend>
           <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
@@ -201,10 +201,10 @@ export function ContactForm() {
                   type="button"
                   aria-pressed={selected}
                   onClick={() => setRole(option)}
-                  className={`flex min-h-11 items-center justify-center rounded-xl border px-3 py-2 text-center text-[0.9rem] font-semibold transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
+                  className={`flex min-h-11 items-center justify-center rounded-none border px-3 py-2 text-center text-[0.88rem] font-bold transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
                     selected
                       ? "border-ink bg-ink text-card"
-                      : "border-line bg-paper text-ink hover:border-ink/40"
+                      : "border-line bg-paper text-ink hover:border-ink"
                   }`}
                 >
                   {option}
@@ -217,7 +217,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor={`${baseId}-name`}
-            className="block text-[0.95rem] font-bold text-ink"
+            className="block text-[0.92rem] font-bold uppercase tracking-wider text-ink"
           >
             Your name
           </label>
@@ -235,7 +235,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? `${baseId}-name-error` : undefined}
             placeholder="e.g. Maria Santos"
-            className="mt-1.5 block h-12 w-full rounded-xl border border-line bg-paper px-4 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
+            className="mt-1.5 block h-12 w-full rounded-none border border-line bg-paper px-4 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
           />
           {errors.name && (
             <p
@@ -250,7 +250,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor={`${baseId}-org`}
-            className="block text-[0.95rem] font-bold text-ink"
+            className="block text-[0.92rem] font-bold uppercase tracking-wider text-ink"
           >
             Cooperative or organization
           </label>
@@ -270,7 +270,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.organization)}
             aria-describedby={errors.organization ? `${baseId}-org-error` : undefined}
             placeholder="e.g. San Pedro MPC or KADIWA Region IV-A"
-            className="mt-1.5 block h-12 w-full rounded-xl border border-line bg-paper px-4 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
+            className="mt-1.5 block h-12 w-full rounded-none border border-line bg-paper px-4 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
           />
           {errors.organization && (
             <p
@@ -285,7 +285,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor={`${baseId}-contact`}
-            className="block text-[0.95rem] font-bold text-ink"
+            className="block text-[0.92rem] font-bold uppercase tracking-wider text-ink"
           >
             Email or mobile number
           </label>
@@ -304,7 +304,7 @@ export function ContactForm() {
             aria-invalid={Boolean(errors.contact)}
             aria-describedby={errors.contact ? `${baseId}-contact-error` : undefined}
             placeholder="e.g. manager@coop.ph or 0917 000 0000"
-            className="mt-1.5 block h-12 w-full rounded-xl border border-line bg-paper px-4 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
+            className="mt-1.5 block h-12 w-full rounded-none border border-line bg-paper px-4 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
           />
           {errors.contact && (
             <p
@@ -319,7 +319,7 @@ export function ContactForm() {
         <div>
           <label
             htmlFor={`${baseId}-message`}
-            className="block text-[0.95rem] font-bold text-ink"
+            className="block text-[0.92rem] font-bold uppercase tracking-wider text-ink"
           >
             Crop, season, or notes <span className="font-normal text-muted">(optional)</span>
           </label>
@@ -330,13 +330,13 @@ export function ContactForm() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Tell us what crop or harvest window you would like to pilot."
-            className="mt-1.5 block w-full rounded-xl border border-line bg-paper px-4 py-3 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
+            className="mt-1.5 block w-full rounded-none border border-line bg-paper px-4 py-3 text-[1rem] text-ink placeholder:text-muted/70 focus-visible:border-green"
           />
         </div>
 
         <button
           type="submit"
-          className="surface-cta-green inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl px-5 text-[1rem] font-bold text-ink shadow-[0_12px_26px_-10px_rgb(22_101_52/0.45)] transition-[filter,transform] duration-150 active:scale-[0.98] sm:w-auto"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-none bg-[#0b130e] px-7 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] sm:w-auto shadow-sm"
         >
           {CONTACT.cta} <IconArrow />
         </button>
