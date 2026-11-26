@@ -150,7 +150,7 @@ export function HowItWorksSection() {
                 <button
                   type="button"
                   onClick={() => setApproved(true)}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-accent px-5 text-[1rem] font-bold text-ink shadow-[0_10px_24px_-10px_rgb(20_26_22/0.55)] transition-[background-color,transform] duration-150 hover:bg-accent-hover active:scale-[0.98]"
+                  className="surface-cta-green inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-[1rem] font-bold text-ink shadow-[0_12px_26px_-10px_rgb(22_101_52/0.45)] transition-[filter,transform] duration-150 active:scale-[0.98]"
                 >
                   <IconCheck className="h-4 w-4" />
                   {HOW.manager.action}
@@ -188,11 +188,11 @@ export function HowItWorksSection() {
             </div>
           </dl>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-ink p-4 text-card">
+          <div className="surface-obsidian mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl p-4 text-card">
             <div>
               <p className="text-[1.05rem]">
                 Net payout{" "}
-                <span className="ml-1 inline-block rounded-lg bg-accent px-2.5 py-1 text-[1.35rem] font-extrabold tabular-nums tracking-[-0.02em] text-ink">
+                <span className="surface-lime ml-1 inline-block rounded-lg px-2.5 py-1 text-[1.35rem] font-extrabold tabular-nums tracking-[-0.02em] text-ink">
                   ₱{net.toLocaleString()}
                 </span>
               </p>

@@ -158,7 +158,7 @@ export function ContactForm() {
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-accent px-5 text-[1rem] font-bold text-ink transition-[background-color,transform] duration-150 hover:bg-accent-hover active:scale-[0.98]"
+            className="surface-cta-green inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-[1rem] font-bold text-ink shadow-[0_12px_26px_-10px_rgb(22_101_52/0.45)] transition-[filter,transform] duration-150 active:scale-[0.98]"
           >
             {copied ? (
               <>
@@ -336,7 +336,7 @@ export function ContactForm() {
 
         <button
           type="submit"
-          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-accent px-5 text-[1rem] font-bold text-ink shadow-[0_10px_24px_-10px_rgb(20_26_22/0.55)] transition-[background-color,transform] duration-150 hover:bg-accent-hover active:scale-[0.98] sm:w-auto"
+          className="surface-cta-green inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl px-5 text-[1rem] font-bold text-ink shadow-[0_12px_26px_-10px_rgb(22_101_52/0.45)] transition-[filter,transform] duration-150 active:scale-[0.98] sm:w-auto"
         >
           {CONTACT.cta} <IconArrow />
         </button>

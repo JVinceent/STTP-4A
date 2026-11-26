@@ -1,6 +1,6 @@
 # CooPERA website
 
-One-page site for CooPERA (Kape & Paste, DOST-SEI STTP+ 2026). Next.js App Router + TypeScript + Tailwind CSS + real-time Three.js 3D architectural maquette scenes and interactive demos.
+One-page site for CooPERA (Kape & Paste, DOST-SEI STTP+ 2026). Next.js App Router + TypeScript + Tailwind CSS + real-time Three.js 3D architectural maquette scenes, stock farm photography, and interactive demos.
 
 ```bash
 npm install
@@ -24,10 +24,12 @@ npm run build   # production build (deploy target: Vercel)
 | Footer 3D highland terrace relief banner | `src/components/TerrainBanner3D.tsx` |
 | Interactive pilot inquiry form | `src/components/ContactForm.tsx` |
 | Logo | `src/components/Logo.tsx`, `public/logo.png` |
+| Stock farm & farmer photos | `public/stock/` |
 | Fieldwork & team photos | `public/photos/` |
-| Colors and theme tokens | `src/app/globals.css` |
+| Colors, theme tokens & gradient classes | `src/app/globals.css` |
 
 ## Photos
 
-Real fieldwork & team photos in `public/photos/`: `team.jpg`, `team-2.jpg`, `san-pedro-mpc-visit.jpg`, `san-pedro-mpc-interview.jpg`, `sidc-visit.jpg`, `sidc-building.jpg`, `bootcamp-session.jpg`.
-Strip EXIF location data before adding new phone photos (e.g., `magick in.jpg -auto-orient -strip -resize 1800x1800> out.jpg`).
+- **Stock farm & farmer photography (`public/stock/`)**: `farmer-harvest.jpg`, `rice-field.jpg`, `tomato-harvest.jpg`, `farm-landscape.jpg`.
+- **Real fieldwork & team photos (`public/photos/`)**: `team.jpg`, `team-2.jpg`, `san-pedro-mpc-visit.jpg`, `san-pedro-mpc-interview.jpg`, `sidc-visit.jpg`, `sidc-building.jpg`, `bootcamp-session.jpg`.
+- Strip EXIF location data before adding new phone photos (e.g., `magick in.jpg -auto-orient -strip -resize 1800x1800> out.jpg`).

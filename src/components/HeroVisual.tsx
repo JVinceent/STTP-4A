@@ -84,7 +84,7 @@ function StepChipButton({
       </span>
       <span
         className={`self-start rounded-lg px-2.5 py-1 text-[0.875rem] font-bold leading-snug transition-colors ${
-          active ? "bg-accent text-ink" : "bg-paper text-ink"
+          active ? "surface-lime text-ink" : "bg-paper text-ink"
         }`}
       >
         {value}
@@ -572,8 +572,18 @@ export function HeroVisual() {
         ref={containerRef}
         className="relative mx-auto h-[320px] w-full sm:h-[460px] lg:h-[520px]"
       >
+        {/* Subtle concentric orbit rings & soft emerald blur behind the 3D scene */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center"
+        >
+          <span className="orb-ambient absolute h-[74%] w-[74%] rounded-full opacity-70" />
+          <span className="absolute aspect-square w-[68%] rounded-full border border-green/12" />
+          <span className="absolute aspect-square w-[90%] rounded-full border border-dashed border-green/15" />
+        </div>
+
         {webglFailed ? (
-          <div className="flex h-full items-center justify-center rounded-[24px] border border-line bg-paper p-6 text-center">
+          <div className="relative z-10 flex h-full items-center justify-center rounded-[24px] border border-line bg-paper p-6 text-center">
             <p className="max-w-[30ch] text-[1rem] text-muted">
               Nine-plot cooperative cluster: forecast harvests, pool one truck, match buyers, and text receipts.
             </p>
@@ -582,7 +592,7 @@ export function HeroVisual() {
           <canvas
             ref={canvasRef}
             aria-label="Interactive 3D cooperative farm diorama showing tomato trellises, rice paddies, eggplant beds, seedling nursery, packing shed, and pickup truck"
-            className="block h-full w-full cursor-grab touch-pan-y active:cursor-grabbing"
+            className="relative z-10 block h-full w-full cursor-grab touch-pan-y active:cursor-grabbing"
           />
         )}
 
@@ -597,7 +607,7 @@ export function HeroVisual() {
               value={chip.value}
               active={activeStep === stepKey}
               onSelect={() => setActiveStep(stepKey)}
-              className={`hidden sm:flex sm:absolute sm:w-max sm:min-w-[184px] sm:max-w-[248px] ${CHIP_POSITIONS[i]}`}
+              className={`z-20 hidden sm:flex sm:absolute sm:w-max sm:min-w-[184px] sm:max-w-[248px] ${CHIP_POSITIONS[i]}`}
             />
           );
         })}

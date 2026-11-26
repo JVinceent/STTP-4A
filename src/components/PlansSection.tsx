@@ -70,11 +70,11 @@ export function PlansSection() {
                 onClick={() => toggleModule(c.key)}
                 className={`flex min-h-11 items-center gap-2 rounded-xl border px-3.5 py-2 text-[0.92rem] font-bold transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
                   active
-                    ? "border-ink bg-ink text-card"
+                    ? "surface-obsidian border-transparent text-card"
                     : "border-line bg-paper text-ink hover:border-ink/40"
                 }`}
               >
-                <Icon className={`h-4 w-4 shrink-0 ${active ? "text-accent" : "text-green"}`} />
+                <Icon className={`h-4 w-4 shrink-0 ${active ? "text-lime" : "text-green"}`} />
                 <span>{c.title}</span>
               </button>
             );
@@ -91,14 +91,14 @@ export function PlansSection() {
               key={p.name}
               className={`flex flex-col rounded-[28px] p-6 transition-[background-color,border-color,box-shadow] duration-200 sm:p-8 ${
                 isMatched
-                  ? "bg-ink text-card shadow-soft ring-2 ring-accent"
+                  ? "surface-obsidian text-card shadow-soft ring-2 ring-lime"
                   : "border border-line bg-card text-ink"
               }`}
             >
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-[1.5rem] font-bold">{p.name}</h3>
                 {isMatched && (
-                  <span className="rounded-lg bg-accent px-2.5 py-1 text-[0.82rem] font-bold text-ink">
+                  <span className="surface-lime rounded-lg px-2.5 py-1 text-[0.82rem] font-bold text-ink">
                     {p.name === "Full package" ? "All four" : "Selected"}
                   </span>
                 )}
@@ -196,14 +196,18 @@ export function PlansSection() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between rounded-[28px] bg-accent p-6 text-ink sm:p-8">
-          <div>
+        <div className="surface-lime relative flex flex-col justify-between overflow-hidden rounded-[28px] p-6 text-ink sm:p-8">
+          <span
+            aria-hidden="true"
+            className="orb-sphere absolute -bottom-12 -right-12 h-44 w-44 rounded-full opacity-40"
+          />
+          <div className="relative z-10">
             <h3 className="text-[1.2rem] font-bold">{PLANS.pilot.title}</h3>
             <p className="mt-4 max-w-[22ch] text-[clamp(1.6rem,3vw,2.1rem)] font-bold leading-[1.15] tracking-[-0.03em]">
               {PLANS.pilot.body}
             </p>
           </div>
-          <div className="mt-6">
+          <div className="relative z-10 mt-6">
             <a
               href="#contact"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-ink px-5 text-[1rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-ink-2 active:scale-[0.98]"

@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #141a16;
-  --color-ink-2: #1f2721;
-  --color-paper: #f5f3ec;
-  --color-card: #fffdf6;
-  --color-line: #d8d2c2;
+  --color-ink: #0f1912;
+  --color-ink-2: #1a281e;
+  --color-paper: #f3f7f0;
+  --color-card: #ffffff;
+  --color-line: #d6e2d2;
   --color-accent: #f06a24;
   --color-accent-hover: #ff7c38;
   --color-accent-text: #c9460a;
+  --color-lime: #a3e635;
+  --color-lime-bright: #bef648;
   --color-leaf: #6ede32;
-  --color-green: #207a21;
-  --color-mint: #4ade80;
-  --color-muted: #4a5148;
+  --color-green: #166534;
+  --color-mint: #86efac;
+  --color-muted: #435447;
   --color-field-1: #1f6b35;
   --color-field-2: #2f8a45;
   --color-field-3: #5aad4e;
 
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-chip: 0 1px 2px rgb(20 26 22 / 0.06), 0 12px 32px -8px rgb(20 26 22 / 0.18);
-  --shadow-soft: 0 1px 2px rgb(20 26 22 / 0.04), 0 24px 48px -24px rgb(20 26 22 / 0.18);
+  --shadow-chip: 0 1px 2px rgb(15 25 18 / 0.06), 0 12px 32px -8px rgb(15 25 18 / 0.16);
+  --shadow-soft: 0 1px 2px rgb(15 25 18 / 0.04), 0 24px 48px -24px rgb(15 25 18 / 0.16);
 }
 
 html {
@@ -64,6 +66,84 @@ section[id] {
   outline: 3px solid var(--color-green);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+/* Bulletproof brand gradients, luminous spheres & ambient blurs */
+.surface-hero {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(62% 72% at 88% 14%, rgb(190 246 72 / 0.24) 0%, rgb(134 239 172 / 0.14) 40%, transparent 72%),
+    radial-gradient(50% 60% at 10% 88%, rgb(163 230 53 / 0.14) 0%, transparent 65%),
+    linear-gradient(155deg, #ffffff 0%, #f5faf1 60%, #edf7e6 100%);
+}
+
+.surface-obsidian {
+  background-color: #0b130e;
+  background-image:
+    radial-gradient(80% 70% at 92% 8%, rgb(132 204 22 / 0.16) 0%, transparent 55%),
+    radial-gradient(70% 65% at 12% 95%, rgb(34 197 94 / 0.12) 0%, transparent 58%),
+    linear-gradient(145deg, #0b130e 0%, #132319 52%, #0d1911 100%);
+}
+
+.surface-emerald {
+  background-color: #103820;
+  background-image:
+    radial-gradient(70% 70% at 88% 14%, rgb(190 246 72 / 0.18) 0%, transparent 55%),
+    linear-gradient(135deg, #103820 0%, #1b5c33 55%, #113d22 100%);
+}
+
+.surface-lime {
+  background-color: #9ee832;
+  background-image:
+    radial-gradient(75% 75% at 16% 12%, rgb(242 255 186 / 0.45) 0%, transparent 55%),
+    linear-gradient(135deg, #c8fa4e 0%, #9ee832 52%, #78cc22 100%);
+}
+
+.surface-lime-soft {
+  background-color: #eefbe1;
+  background-image:
+    radial-gradient(75% 75% at 85% 15%, rgb(190 246 72 / 0.35) 0%, transparent 60%),
+    linear-gradient(135deg, #eefbe1 0%, #dbf7c5 100%);
+}
+
+.surface-cta-green {
+  background-color: #9ce835;
+  background-image: linear-gradient(135deg, #bef648 0%, #86dc29 100%);
+}
+
+.surface-cta-green:hover {
+  background-image: linear-gradient(135deg, #ccff59 0%, #96ea38 100%);
+}
+
+.text-gradient-green {
+  background-image: linear-gradient(115deg, #15803d 0%, #22c55e 52%, #65a30d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-lime {
+  background-image: linear-gradient(115deg, #d9ff66 0%, #84cc16 55%, #4ade80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.orb-sphere {
+  background-image: radial-gradient(circle at 35% 30%, #e0ff82 0%, #84cc16 46%, #15803d 100%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.orb-ambient {
+  background-image: radial-gradient(
+    circle,
+    rgba(132, 204, 22, 0.24) 0%,
+    rgba(34, 197, 94, 0.14) 48%,
+    transparent 72%
+  );
+  filter: blur(44px);
+  pointer-events: none;
 }
 
 /* Fixed-height drawn art below the fold: skip painting until near view.
