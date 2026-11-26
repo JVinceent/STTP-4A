@@ -6,7 +6,9 @@
   --color-paper: #f5f3ec;
   --color-card: #fffdf6;
   --color-line: #d8d2c2;
-  --color-accent: #e75613;
+  --color-accent: #f06a24;
+  --color-accent-hover: #ff7c38;
+  --color-accent-text: #c9460a;
   --color-leaf: #6ede32;
   --color-green: #207a21;
   --color-mint: #4ade80;
@@ -71,28 +73,11 @@ section[id] {
   contain-intrinsic-size: auto 440px;
 }
 
-/* Isometric plane used by the hero and section visuals */
-.iso-plane {
-  transform: rotateX(56deg) rotateZ(-42deg);
-  transform-style: flat;
-}
-
-.tile-slab {
-  box-shadow:
-    6px 6px 0 0 #155228,
-    18px 22px 40px -8px rgb(20 26 22 / 0.35);
-}
-
-.dash-ring {
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='26' ry='26' stroke='%23A8A08C' stroke-width='2' stroke-dasharray='7%2c 8' stroke-linecap='round'/%3e%3c/svg%3e");
-  border-radius: 26px;
-}
-
 /* One orchestrated load moment for the hero visual */
-@keyframes tile-in {
+@keyframes diorama-in {
   from {
     opacity: 0;
-    transform: translate(-22px, -22px);
+    transform: translateY(12px) scale(0.96);
   }
   to {
     opacity: 1;
@@ -109,24 +94,15 @@ section[id] {
     transform: none;
   }
 }
-.tile-in {
-  animation: tile-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+.diorama-in {
+  animation: diorama-in 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .chip-in {
-  animation: chip-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: chip-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
-  .tile-in,
+  .diorama-in,
   .chip-in {
     animation: none;
   }
-}
-
-.placeholder-box {
-  background-color: #efece2;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    transparent 0 10px,
-    rgb(216 210 194 / 0.55) 10px 11px
-  );
 }

@@ -58,12 +58,12 @@ export function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-[background-color,box-shadow] duration-300 ${
-        scrolled || open ? "bg-paper shadow-[0_1px_0_0_#D8D2C2]" : "bg-paper"
+      className={`sticky top-0 z-50 isolate transition-[background-color,box-shadow] duration-300 ${
+        scrolled || open ? "bg-paper/95 backdrop-blur-md shadow-[0_1px_0_0_var(--color-line)]" : "bg-paper"
       }`}
     >
       <nav aria-label="Main" className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <a href="#home" className="shrink-0 rounded-lg" onClick={() => setOpen(false)}>
+        <a href="#home" className="inline-flex min-h-11 shrink-0 items-center rounded-lg" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
@@ -75,7 +75,7 @@ export function Nav() {
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? "location" : undefined}
-                  className={`inline-flex h-10 items-center rounded-xl border px-4 text-[0.95rem] font-medium transition-colors duration-200 ${
+                  className={`inline-flex h-11 items-center rounded-xl border px-4 text-[0.95rem] font-medium transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
                     isActive
                       ? "border-ink bg-ink text-card"
                       : "border-line bg-card text-ink hover:border-ink/40"
@@ -92,7 +92,7 @@ export function Nav() {
           <a
             href="#contact"
             aria-current={active === "contact" ? "location" : undefined}
-            className={`hidden h-10 items-center rounded-xl px-4 text-[0.95rem] font-bold transition-colors sm:inline-flex ${
+            className={`hidden h-11 items-center rounded-xl px-4 text-[0.95rem] font-bold transition-[background-color,color,transform] duration-150 active:scale-[0.98] sm:inline-flex ${
               active === "contact" ? "bg-accent text-ink ring-2 ring-ink" : "bg-ink text-card hover:bg-ink-2"
             }`}
           >
@@ -101,7 +101,7 @@ export function Nav() {
           <button
             ref={menuButton}
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-card lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-card transition-transform duration-150 active:scale-[0.98] lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}

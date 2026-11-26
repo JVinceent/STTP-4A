@@ -1,11 +1,7 @@
 /**
- * All site copy, word for word from CooPERA_Website_Prompt.md.
- * Placeholders are wrapped in [ ] so they are easy to find and replace.
+ * Single source of truth for CooPERA site copy, metrics, story milestones,
+ * pilot plans, validation findings, partners, and team roster.
  */
-
-export const TEAM_EMAIL = "[TEAM EMAIL]";
-export const FACEBOOK_URL = "[Facebook]";
-export const LINKEDIN_URL = "[LinkedIn]";
 
 export const NAV = [
   { id: "home", label: "Home" },
@@ -46,7 +42,8 @@ export const HERO = {
     },
     {
       value: "3 of 3",
-      label: "Farmers we interviewed said they sold cheap because a loan or pickers had to be paid.",
+      label:
+        "Farmers we interviewed said they sold cheap because a loan or pickers had to be paid.",
       source: "Source: CooPERA farmer interviews, Nov 2026.",
     },
   ],
@@ -69,77 +66,88 @@ export const ABOUT = {
 export type Milestone = {
   title: string;
   body: string;
-  /** file under /public/photos, or null to show a labelled placeholder */
-  photo: { src: string | null; expects: string; alt: string };
-  placeholder?: boolean;
+  tag: string;
+  photo: { src: string; alt: string } | null;
 };
 
 export const STORY: Milestone[] = [
   {
-    title: "[Bootcamp 1: add one sentence]",
-    body: "",
-    placeholder: true,
-    photo: { src: null, expects: "bootcamp-1.jpg", alt: "" },
-  },
-  {
     title: "Choosing the problem.",
+    tag: "Ideation",
     body: "We weighed hospital referrals, scholarship stipends, typhoon-isolated towns and Laguna Lake water quality. We chose farming, where the pain was clearest.",
-    photo: { src: null, expects: "choosing-the-problem.jpg", alt: "" },
+    photo: null,
   },
   {
     title: "Bootcamp 2 · Systems thinking.",
+    tag: "STTP+ Bootcamp",
     body: "We learned to look below the events, at the patterns and structures that keep repeating.",
-    photo: { src: null, expects: "bootcamp-2.jpg", alt: "" },
+    photo: null,
   },
   {
-    title: "Listening to cooperatives.",
-    body: "San Pedro Multi-Purpose Cooperative in Batangas City keeps one notebook per member, and its manager told us: “Kapag hindi masingil, babagsak ang kooperatiba” (if loans go unpaid, the cooperative falls). SIDC, with more than 80,000 members, runs digital systems but needs help turning data into decisions.",
+    title: "Listening to cooperatives · San Pedro MPC.",
+    tag: "Fieldwork",
+    body: "San Pedro Multi-Purpose Cooperative in Batangas City keeps one notebook per member, and its manager told us: “Kapag hindi masingil, babagsak ang kooperatiba” (if loans go unpaid, the cooperative falls).",
     photo: {
       src: "/photos/san-pedro-mpc-visit.jpg",
-      expects: "san-pedro-mpc-visit.jpg",
       alt: "Our team with staff of San Pedro Multi-Purpose Cooperative in their office in Batangas City",
     },
   },
   {
+    title: "Listening to cooperatives · SIDC.",
+    tag: "Fieldwork",
+    body: "Sorosoro Ibaba Development Cooperative (SIDC), with more than 80,000 members, runs digital systems but needs help turning farm and loan data into timely selling decisions.",
+    photo: {
+      src: "/photos/sidc-building.jpg",
+      alt: "Exterior of the Sorosoro Ibaba Development Cooperative (SIDC) headquarters in Batangas City",
+    },
+  },
+  {
     title: "Bootcamp 3 · Human-centered design and felt value.",
+    tag: "STTP+ Bootcamp",
     body: "We built empathy maps and a point-of-view statement, and learned that a solution has to be worth more to people than the effort of changing.",
-    photo: { src: null, expects: "bootcamp-3.jpg", alt: "" },
+    photo: null,
   },
   {
     title: "Bootcamp 4 · Science communication.",
+    tag: "STTP+ Bootcamp",
     body: "We learned not to dictate the problem to the people who live it.",
-    photo: { src: null, expects: "bootcamp-4.jpg", alt: "" },
+    photo: null,
   },
   {
     title: "A DOST consultation.",
+    tag: "Consultation",
     body: "An expert told us farmers sell palay at around ₱13 a kilo, that most farmers are older and use text messages, and that the cooperative is where members’ farms are registered. This moved our focus to the moment of harvest.",
-    photo: { src: null, expects: "dost-consultation.jpg", alt: "" },
+    photo: null,
   },
   {
     title: "Bootcamp 5 · Startups and IP.",
-    body: "We mapped how an idea becomes impact, and chose a path we can pilot with a cooperative.",
-    photo: { src: null, expects: "bootcamp-5.jpg", alt: "" },
+    tag: "STTP+ Bootcamp",
+    body: "We mapped how an idea becomes impact, and chose a path we can pilot directly with a cooperative.",
+    photo: {
+      src: "/photos/bootcamp-session.jpg",
+      alt: "Kape & Paste members seated around a roundtable with STTP notebooks during a DOST-SEI bootcamp session",
+    },
   },
   {
     title: "One concept.",
+    tag: "Milestone",
     body: "On October 31, all six of us combined our ideas into CooPERA: forecast, pool, sell and settle, through the cooperative.",
-    photo: { src: null, expects: "one-concept.jpg", alt: "" },
+    photo: {
+      src: "/photos/team-2.jpg",
+      alt: "All six members of Kape & Paste together at Batangas State University",
+    },
   },
   {
     title: "Listening to farmers.",
+    tag: "Fieldwork",
     body: "In November we interviewed three farmers in Batangas and Quezon. All three told us the coop lends to them, but at selling time each farmer is on their own.",
-    photo: { src: null, expects: "farmer-interview-1.jpg", alt: "" },
-  },
-  {
-    title: "[Bootcamp 6: add one sentence]",
-    body: "",
-    placeholder: true,
-    photo: { src: null, expects: "bootcamp-6.jpg", alt: "" },
+    photo: null,
   },
   {
     title: "Demo Day · November 28, 2026.",
-    body: "General Santos City.",
-    photo: { src: null, expects: "demo-day.jpg", alt: "" },
+    tag: "Demo Day",
+    body: "General Santos City — presenting the CooPERA pilot blueprint and seeking our first partner cooperative.",
+    photo: null,
   },
 ];
 
@@ -178,6 +186,13 @@ export const SERVICES = {
 
 export const HOW = {
   heading: "See it work.",
+  farms: [
+    { n: 1, farmer: "Aling Rosa", kg: 2200, loan: 14000, freight: 2600 },
+    { n: 2, farmer: "Mang Ben", kg: 2400, loan: 16000, freight: 2800 },
+    { n: 3, farmer: "Mang Edgar", kg: 3000, loan: 20000, freight: 3500 },
+    { n: 4, farmer: "Aling Tina", kg: 2100, loan: 12000, freight: 2500 },
+    { n: 5, farmer: "Mang Ruel", kg: 2300, loan: 15000, freight: 2600 },
+  ],
   manager: {
     title: "The manager sees",
     stats: [
@@ -198,29 +213,48 @@ export const HOW = {
     ],
     total: "₱66,500",
     caption:
-      "Illustrative. At a ₱12/kg middleman price, he would keep ₱16,000. Our pilot will test these numbers.",
+      "Illustrative. Adjust the buyer offer or pick any farm above to see live payouts vs. a ₱12/kg middleman price. Our pilot will test these numbers.",
   },
-};
+} as const;
 
 export const PLANS = {
   heading: "Pay only for what your cooperative needs.",
   body: "Choose services one by one, or take the full package. Farmers never pay.",
-  price: "[₱___ / month]",
-  priceNote: "Pricing set after the pilot.",
   cards: [
     {
       name: "Single service",
-      body: "Any one of Forecast, Pool trucks, Find buyers or Settle. Includes member, farm and loan records.",
+      body: "Start with any one of Forecast, Pool trucks, Find buyers, or Settle. Includes organized member, farm, and loan records.",
+      priceTitle: "Pilot pricing",
+      priceNote: "Set with partner cooperatives after pilot",
+      features: [
+        "Member, farm & loan ledger included",
+        "Manager approval on every booking",
+        "SMS updates for farmers — no app needed",
+      ],
       highlight: false,
     },
     {
       name: "Build your own",
-      body: "Pick any two or three services.",
+      body: "Pick any two or three services that match how your cooperative already operates. Combine forecasting, pooled trucking, buyer matching, or settlement at your own pace.",
+      priceTitle: "Custom bundle",
+      priceNote: "Set with partner cooperatives after pilot",
+      features: [
+        "Combine any 2 or 3 CooPERA modules",
+        "Shared cooperative data across tools",
+        "Scale into the full hub anytime",
+      ],
       highlight: false,
     },
     {
       name: "Full package",
-      body: "All four services working together, with the AI agent connecting each step.",
+      body: "All four services working together end-to-end, with the AI agent preparing each step for manager sign-off.",
+      priceTitle: "Full hub · Pilot",
+      priceNote: "Set with partner cooperatives after pilot",
+      features: [
+        "All 4 services linked by the AI agent",
+        "Priority onboarding for your pilot season",
+        "End-to-end receipt & loan ledger sync",
+      ],
       highlight: true,
     },
   ],
@@ -240,32 +274,34 @@ export const VALIDATION = {
   heading: "Tested with the people who live the problem.",
   cards: [
     {
+      key: "san-pedro",
       title: "San Pedro Multi-Purpose Cooperative, Batangas City",
       body: "A small cooperative; records kept by hand; unpaid loans are the biggest worry.",
       photo: {
         src: "/photos/san-pedro-mpc-interview.jpg",
-        expects: "san-pedro-mpc-interview.jpg",
         alt: "Cooperative staff talking with our team across a table of record books at San Pedro Multi-Purpose Cooperative",
       },
     },
     {
+      key: "sidc",
       title: "SIDC (Sorosoro Ibaba Development Cooperative)",
       body: "A large cooperative with more than 80,000 members; digital systems that still need data turned into decisions.",
       photo: {
         src: "/photos/sidc-visit.jpg",
-        expects: "sidc-visit.jpg",
         alt: "Two members of our team with SIDC officials in the office of the SIDC board chairperson",
       },
     },
     {
+      key: "dost",
       title: "DOST consultation",
       body: "Farmers sell palay at around ₱13 a kilo; text messages reach older farmers best; the cooperative is the right channel.",
-      photo: { src: null, expects: "dost-consultation.jpg", alt: "" },
+      photo: null,
     },
     {
+      key: "farmers",
       title: "Three farmers in Batangas and Quezon",
       body: "Growers of tomato, rice and coconut, and eggplant. All three named the same reasons for selling cheap: everyone harvests at once, no truck, one buyer with cash, and a loan and pickers to pay.",
-      photo: { src: null, expects: "farmer-interview-1.jpg", alt: "" },
+      photo: null,
     },
   ],
   quotes: [
@@ -313,21 +349,27 @@ export const TEAM = {
   photo: {
     src: "/photos/team.jpg",
     alt: "The six members of Kape & Paste sitting together in front of the STTP letters at a DOST-SEI event",
+    caption: "Kape & Paste · DOST-SEI STTP+ Region IV-A",
   },
   members: [
-    { name: "Emmanuel M. Caritas", file: "team-emmanuel-caritas.jpg" },
-    { name: "John Vincent Doria", file: "team-john-vincent-doria.jpg" },
-    { name: "John Laurence Mendoza", file: "team-john-laurence-mendoza.jpg" },
-    { name: "Adelaide J. B. Dimayacyac", file: "team-adelaide-dimayacyac.jpg" },
-    { name: "Raiza E. Gatchalian", file: "team-raiza-gatchalian.jpg" },
-    { name: "James Villaflor", file: "team-james-villaflor.jpg" },
+    { name: "Emmanuel M. Caritas", initials: "EC", subtitle: "Kape & Paste · STTP+ 2026", tone: "green" as const },
+    { name: "John Vincent Doria", initials: "JD", subtitle: "Kape & Paste · STTP+ 2026", tone: "ink" as const },
+    { name: "John Laurence Mendoza", initials: "JM", subtitle: "Kape & Paste · STTP+ 2026", tone: "accent" as const },
+    { name: "Adelaide J. B. Dimayacyac", initials: "AD", subtitle: "Kape & Paste · STTP+ 2026", tone: "accent" as const },
+    { name: "Raiza E. Gatchalian", initials: "RG", subtitle: "Kape & Paste · STTP+ 2026", tone: "green" as const },
+    { name: "James Villaflor", initials: "JV", subtitle: "Kape & Paste · STTP+ 2026", tone: "ink" as const },
   ],
 };
 
 export const CONTACT = {
   heading: "Bring CooPERA to your cooperative.",
   body: "We’re looking for one partner cooperative, buyers like KADIWA, and mentors for our first pilot.",
-  cta: "Get in touch",
+  pills: [
+    "Region IV-A · CALABARZON",
+    "1 cooperative · 1 crop · 1 season",
+    "Free pilot",
+  ],
+  cta: "Send pilot inquiry",
 };
 
 export const FOOTER = "© 2026 CooPERA · Kape & Paste · DOST-SEI STTP+ Region IV-A";

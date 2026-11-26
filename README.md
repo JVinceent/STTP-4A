@@ -1,6 +1,6 @@
 # CooPERA website
 
-One-page site for CooPERA (Kape & Paste, DOST-SEI STTP+ 2026). Next.js App Router + TypeScript + Tailwind, static, no backend.
+One-page site for CooPERA (Kape & Paste, DOST-SEI STTP+ 2026). Next.js App Router + TypeScript + Tailwind CSS + real-time Three.js 3D architectural maquette scenes and interactive demos.
 
 ```bash
 npm install
@@ -12,28 +12,22 @@ npm run build   # production build (deploy target: Vercel)
 
 | What | File |
 |---|---|
-| All copy, numbers and placeholders | `src/content.ts` |
+| All copy, metrics, story, farms, and team roster | `src/content.ts` |
 | Page sections | `src/app/page.tsx` |
 | Nav + scroll-spy | `src/components/Nav.tsx` |
-| Hero isometric visual | `src/components/HeroVisual.tsx` |
-| "See it work" map | `src/components/PickupMap.tsx` |
-| Drawn field art (SVG, no stock photos) | `src/components/FieldArt.tsx` |
-| Logo | `src/components/Logo.tsx`, `public/icon.svg` |
-| Colors and fonts | `src/app/globals.css` |
-
-## Fill in the placeholders
-
-Search `src/content.ts` for `[`:
-
-- `[TEAM EMAIL]`, `[Facebook]`, `[LinkedIn]` (top of the file). Once real, turn the Facebook/LinkedIn chips in `Contact()` into links.
-- `[role]` for each team member (in `page.tsx`, `Team()`).
-- `[Bootcamp 1: add one sentence]`, `[Bootcamp 6: add one sentence]` in `STORY`.
-- `[₱___ / month]` stays until pricing is set after the pilot.
+| Shared Three.js procedural farm builders | `src/lib/farm3d.ts` |
+| Interactive 3D Hero farm cluster & workflow chips | `src/components/HeroVisual.tsx` |
+| Interactive 3D aerial route map & live payout simulator | `src/components/PickupMap.tsx`, `src/components/HowItWorksSection.tsx` |
+| Interactive Mission/Vision panels | `src/components/AboutVisuals.tsx` |
+| Interactive module & freight fee configurator | `src/components/PlansSection.tsx` |
+| Interactive Farmer Field Notes card | `src/components/ValidationFarmerCard.tsx` |
+| Footer 3D highland terrace relief banner | `src/components/TerrainBanner3D.tsx` |
+| Interactive pilot inquiry form | `src/components/ContactForm.tsx` |
+| Logo | `src/components/Logo.tsx`, `public/logo.png` |
+| Fieldwork & team photos | `public/photos/` |
+| Colors and theme tokens | `src/app/globals.css` |
 
 ## Photos
 
-Put photos in `public/photos/`. Any slot showing `[Photo: /photos/<name>.jpg]` is waiting for that file: add the file, then set `src: "/photos/<name>.jpg"` and a real `alt` in `content.ts`. Strip location data before adding phone photos (for example `magick in.jpg -auto-orient -strip -resize 1800x1800> out.jpg`).
-
-Photos in use now: `team.jpg`, `san-pedro-mpc-visit.jpg`, `san-pedro-mpc-interview.jpg`, `sidc-visit.jpg`. Also copied but unused: `team-2.jpg`, `sidc-building.jpg`, `bootcamp-session.jpg`.
-
-Still needed: `dost-consultation.jpg`, `farmer-interview-1.jpg`, `bootcamp-1.jpg` … `bootcamp-6.jpg`, `choosing-the-problem.jpg`, `one-concept.jpg`, `demo-day.jpg`, and one portrait per member (`team-<first>-<last>.jpg`, names listed in `TEAM`).
+Real fieldwork & team photos in `public/photos/`: `team.jpg`, `team-2.jpg`, `san-pedro-mpc-visit.jpg`, `san-pedro-mpc-interview.jpg`, `sidc-visit.jpg`, `sidc-building.jpg`, `bootcamp-session.jpg`.
+Strip EXIF location data before adding new phone photos (e.g., `magick in.jpg -auto-orient -strip -resize 1800x1800> out.jpg`).

@@ -33,7 +33,7 @@ export function Logo({ tone = "light", className = "" }: LogoProps) {
         <span aria-hidden="true" className={tone === "dark" ? "text-leaf" : "text-green"}>
           Coo
         </span>
-        <span aria-hidden="true" className="text-accent">
+        <span aria-hidden="true" className={tone === "dark" ? "text-accent" : "text-accent-text"}>
           PERA
         </span>
       </span>
