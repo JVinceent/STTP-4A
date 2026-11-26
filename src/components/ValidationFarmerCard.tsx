@@ -26,7 +26,7 @@ export function ValidationFarmerCard() {
   const current = CROP_NOTES[idx];
 
   return (
-    <div className="relative flex min-h-[196px] flex-col justify-between overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-4 text-card sm:aspect-[4/3] shadow-sm">
+    <div className="relative flex min-h-[196px] flex-col justify-between overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-4 text-card sm:aspect-[4/3]">
       <Image
         src="/stock/farm-landscape.jpg"
         alt=""
@@ -44,7 +44,7 @@ export function ValidationFarmerCard() {
           <span className="h-1.5 w-1.5 rounded-none bg-[#bef648]" aria-hidden="true" />
           Farmer Field Notes
         </p>
-        <span className="text-[0.72rem] font-mono tracking-wider text-[#D7DCD4]">NOV 2026</span>
+        <span className="text-[0.72rem] tracking-wider text-[#D7DCD4]">NOV 2026</span>
       </div>
 
       <div className="relative z-10 my-2">

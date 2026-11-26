@@ -614,7 +614,7 @@ export function PickupMap({ farms, selectedFarm, onSelectFarm, approved }: Props
   }, [farms]);
 
   return (
-    <figure className="relative overflow-hidden rounded-none border border-line bg-field-1 shadow-sm">
+    <figure className="relative overflow-hidden rounded-none border border-line bg-field-1">
       <div ref={containerRef} className="relative h-[320px] w-full sm:h-[380px] lg:h-[440px]">
         {webglFailed ? (
           <div className="flex h-full items-center justify-center bg-field-1 p-6 text-center text-card">
@@ -632,10 +632,10 @@ export function PickupMap({ farms, selectedFarm, onSelectFarm, approved }: Props
 
         {/* Top-left status pills */}
         <div className="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-2 sm:left-5 sm:top-5">
-          <span className="inline-flex items-center gap-2 rounded-none bg-[#0b130e]/95 px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase text-card shadow-sm backdrop-blur-sm border border-white/10">
+          <span className="inline-flex items-center gap-2 rounded-none bg-[#0b130e]/95 px-3.5 py-1.5 text-xs tracking-wider uppercase text-card backdrop-blur-sm border border-white/10">
             <IconTruck className="h-4 w-4 text-[#bef648]" />1 truck, 5 pickups
           </span>
-          <span className="inline-flex items-center rounded-none bg-card/95 px-3.5 py-1.5 text-xs font-bold text-ink shadow-sm backdrop-blur-sm border border-line">
+          <span className="inline-flex items-center rounded-none bg-card/95 px-3.5 py-1.5 text-xs font-bold text-ink backdrop-blur-sm border border-line">
             {loadingFarm
               ? `Loading at Farm ${loadingFarm} · ${farms.find((f) => f.n === loadingFarm)?.farmer}`
               : approved
@@ -659,14 +659,14 @@ export function PickupMap({ farms, selectedFarm, onSelectFarm, approved }: Props
                 top: `${pin.topPct}%`,
                 transform: "translate(-50%, -50%)",
               }}
-              className={`absolute inline-flex min-h-8 items-center gap-1.5 rounded-none border px-2.5 py-1 text-[0.78rem] font-bold shadow-md transition-[background-color,border-color,transform] duration-150 active:scale-[0.97] sm:min-h-9 sm:px-3 ${
+              className={`absolute inline-flex min-h-8 items-center gap-1.5 rounded-none border px-2.5 py-1 text-[0.78rem] font-bold transition-[background-color,border-color,transform] duration-150 active:scale-[0.97] sm:min-h-9 sm:px-3 ${
                 isSelected
                   ? "z-20 border-ink bg-[#bef648] text-ink ring-1 ring-ink"
                   : "z-10 border-white/30 bg-[#0b130e]/90 text-card hover:bg-[#0b130e]"
               }`}
             >
               <span
-                className={`inline-flex h-4 w-4 items-center justify-center rounded-none text-[0.72rem] font-mono font-bold ${
+                className={`inline-flex h-4 w-4 items-center justify-center rounded-none text-[0.72rem] font-bold ${
                   isSelected ? "bg-ink text-card" : "bg-green text-white"
                 }`}
               >

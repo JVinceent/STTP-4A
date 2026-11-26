@@ -49,12 +49,12 @@ export function PlansSection() {
   return (
     <div>
       {/* Interactive module configurator */}
-      <div className="mt-10 rounded-none border border-line bg-card p-4 sm:p-5 shadow-sm">
+      <div className="mt-8 rounded-none border border-line bg-card p-4 sm:p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-[0.92rem] font-bold uppercase tracking-wider text-ink">
             Select the modules your cooperative needs ({count} of 4 active):
           </p>
-          <span className="rounded-none border border-green/30 bg-green/10 px-3 py-1 text-[0.82rem] font-mono font-bold uppercase text-green">
+          <span className="rounded-none border border-green/30 bg-green/10 px-3 py-1 text-[0.82rem] font-bold uppercase text-green">
             Recommended: {activeTierName}
           </span>
         </div>
@@ -89,7 +89,7 @@ export function PlansSection() {
           return (
             <li
               key={p.name}
-              className={`flex flex-col rounded-none p-6 transition-[background-color,border-color,box-shadow] duration-200 sm:p-8 shadow-sm ${
+              className={`flex flex-col rounded-none p-6 transition-[background-color,border-color,box-shadow] duration-200 sm:p-8 ${
                 isMatched
                   ? "border border-white/10 bg-[#0b130e] text-card ring-1 ring-[#bef648]"
                   : "border border-line bg-card text-ink"
@@ -98,7 +98,7 @@ export function PlansSection() {
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-[1.5rem] font-extrabold tracking-[-0.03em]">{p.name}</h3>
                 {isMatched && (
-                  <span className="rounded-none bg-[#bef648] px-2.5 py-1 text-[0.78rem] font-mono font-bold uppercase tracking-wider text-ink">
+                  <span className="rounded-none bg-[#bef648] px-2.5 py-1 text-[0.78rem] font-bold uppercase tracking-wider text-ink">
                     {p.name === "Full package" ? "All four" : "Selected"}
                   </span>
                 )}
@@ -119,7 +119,7 @@ export function PlansSection() {
               <div className={`mt-auto flex items-end justify-between gap-3 border-t pt-5 ${isMatched ? "border-white/15" : "border-line"}`}>
                 <div>
                   <p className="text-[1.35rem] font-extrabold tracking-[-0.02em]">{p.priceTitle}</p>
-                  <p className={`mt-1 text-[0.92rem] font-mono ${isMatched ? "text-[#bef648]" : "text-green"}`}>{p.priceNote}</p>
+                  <p className={`mt-1 text-[0.92rem] ${isMatched ? "text-[#bef648]" : "text-green"}`}>{p.priceNote}</p>
                 </div>
                 {!isMatched && (
                   <button
@@ -138,10 +138,10 @@ export function PlansSection() {
 
       {/* Interactive freight estimator + Pilot CTA */}
       <div className="mt-4 grid gap-4 lg:grid-cols-2">
-        <div className="rounded-none border border-line bg-card p-6 sm:p-8 shadow-sm">
+        <div className="rounded-none border border-line bg-card p-6 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h3 className="text-[1.2rem] font-bold">{PLANS.tripFee.title}</h3>
-            <span className="rounded-none border border-line bg-paper px-3 py-1 text-[0.8rem] font-mono font-bold uppercase text-muted">
+            <span className="rounded-none border border-line bg-paper px-3 py-1 text-[0.8rem] font-bold uppercase text-muted">
               8–12% of pooled freight
             </span>
           </div>
@@ -196,7 +196,7 @@ export function PlansSection() {
           </div>
         </div>
 
-        <div className="relative flex flex-col justify-between overflow-hidden rounded-none border border-ink/20 bg-[#bef648] p-6 text-ink sm:p-8 shadow-sm">
+        <div className="relative flex flex-col justify-between overflow-hidden rounded-none border border-ink/20 bg-[#bef648] p-6 text-ink sm:p-8">
           <div className="relative z-10">
             <h3 className="text-[1.15rem] font-bold uppercase tracking-wider text-ink">{PLANS.pilot.title}</h3>
             <p className="mt-4 max-w-[22ch] text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-[1.15] tracking-[-0.035em]">
@@ -206,7 +206,7 @@ export function PlansSection() {
           <div className="relative z-10 mt-6">
             <a
               href="#contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-6 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] shadow-sm"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-6 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98]"
             >
               {PLANS.pilot.cta} <IconArrow />
             </a>

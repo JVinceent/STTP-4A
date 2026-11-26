@@ -13,18 +13,6 @@ export function HeroSilkBackground() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 overflow-hidden select-none"
     >
-      {/* Editorial architectural grid markers */}
-      <div className="absolute inset-0 opacity-40">
-        <span className="absolute left-6 top-6 text-[0.75rem] font-mono tracking-widest text-muted/60">
-          + 14°06&apos;N 121°09&apos;E
-        </span>
-        <span className="absolute right-6 top-6 text-[0.75rem] font-mono tracking-widest text-muted/60">
-          STTP-4A // 2026
-        </span>
-        <span className="absolute left-6 bottom-6 text-[0.72rem] font-mono tracking-widest text-muted/50">
-          [AGRI-TECH INFRASTRUCTURE]
-        </span>
-      </div>
 
       {/* 3D Flowing Green Silk / Topographic Wave Ribbons */}
       <svg

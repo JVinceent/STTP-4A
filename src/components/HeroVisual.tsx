@@ -59,7 +59,7 @@ function StepChipButton({
       type="button"
       aria-pressed={active}
       onClick={onSelect}
-      className={`group flex min-h-11 flex-col gap-2 rounded-none border p-2.5 text-left shadow-sm backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-150 active:scale-[0.98] ${
+      className={`group flex min-h-11 flex-col gap-2 rounded-none border p-2.5 text-left backdrop-blur-sm transition-[border-color,background-color,box-shadow,transform] duration-150 active:scale-[0.98] ${
         active
           ? "border-ink bg-white ring-1 ring-ink/40"
           : "border-line/90 bg-white/95 hover:border-ink/60"
@@ -632,9 +632,8 @@ export function HeroVisual() {
 
       <figcaption
         id="hero-visual-caption"
-        className="mt-2.5 flex items-center justify-center gap-2 text-sm text-muted lg:justify-end"
+        className="sr-only"
       >
-        <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />
         Interactive 3D · Drag to rotate · Click a step
       </figcaption>
     </figure>

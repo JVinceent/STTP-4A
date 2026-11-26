@@ -70,7 +70,7 @@ function Button({
 }) {
   const styles = {
     primary:
-      "bg-[#0b130e] text-card hover:bg-[#182a1d] shadow-[0_12px_24px_-10px_rgba(11,19,14,0.35)]",
+      "bg-[#0b130e] text-card hover:bg-[#182a1d]",
     secondary: "border border-line bg-card text-ink hover:border-ink hover:bg-neutral-50",
     dark: "bg-ink text-card hover:bg-ink-2",
     lime: "bg-[#bef648] text-ink hover:bg-[#ade634]",
@@ -133,7 +133,7 @@ function Hero() {
             {HERO.figures.map((f) => (
               <li
                 key={f.value}
-                className="flex flex-col rounded-none border border-line/90 bg-white/90 p-5 backdrop-blur-md shadow-sm transition-[border-color,transform] hover:border-ink/50"
+                className="flex flex-col rounded-none border border-line/90 bg-white/90 p-5 backdrop-blur-md transition-[border-color,transform] hover:border-ink/50"
               >
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 shrink-0 rounded-none bg-[#bef648]" aria-hidden="true" />
@@ -142,7 +142,7 @@ function Hero() {
                   </span>
                 </div>
                 <span className="mt-3 text-[0.98rem] font-medium leading-snug text-ink">{f.label}</span>
-                <span className="mt-auto pt-3 text-[0.82rem] font-mono uppercase tracking-wider text-muted">{f.source}</span>
+                <span className="mt-auto pt-3 text-[0.82rem] uppercase tracking-wider text-muted">{f.source}</span>
               </li>
             ))}
           </ul>
@@ -205,14 +205,14 @@ function Story() {
 
 function About() {
   return (
-    <section id="about" className="py-20 sm:py-28">
+    <section id="about" className="py-12 sm:py-16">
       <div className={wrap}>
         <Reveal>
           <h2 className={`${h2} max-w-[20ch]`}>
             <span className="text-gradient-luxury">Rooted in field research</span> across Batangas and Quezon
           </h2>
         </Reveal>
-        <div className="mt-10">
+        <div className="mt-8">
           <AboutTabs
             tabs={[
               { id: "mission", label: "Our mission", content: <MissionPanel text={ABOUT.mission} /> },
@@ -221,7 +221,7 @@ function About() {
                 id: "story",
                 label: "Our story",
                 content: (
-                  <div className="rounded-none border border-line bg-card p-5 sm:p-10 shadow-sm">
+                  <div className="rounded-none border border-line bg-card p-5 sm:p-10">
                     <Story />
                   </div>
                 ),
@@ -238,7 +238,7 @@ function About() {
 
 function Services() {
   return (
-    <section id="services" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="services" className="relative overflow-hidden py-12 sm:py-16">
       <div className={`${wrap} relative z-10`}>
         <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-16">
           <h2 className={`${h2} max-w-[14ch]`}>
@@ -247,7 +247,7 @@ function Services() {
           <p className="max-w-[36rem] text-muted text-[1.0625rem] leading-relaxed">{SERVICES.body}</p>
         </Reveal>
 
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.cards.map((c, i) => {
             const Icon = serviceIcon[c.key];
             const num = String(i + 1).padStart(2, "0");
@@ -258,7 +258,7 @@ function Services() {
                   as="li"
                   key={c.key}
                   delay={i * 0.06}
-                  className="relative flex flex-col overflow-hidden rounded-none border border-line bg-white p-3.5 shadow-sm"
+                  className="relative flex flex-col overflow-hidden rounded-none border border-line bg-white p-3.5"
                 >
                   <span
                     aria-hidden="true"
@@ -295,7 +295,7 @@ function Services() {
                   as="li"
                   key={c.key}
                   delay={i * 0.06}
-                  className="relative flex flex-col overflow-hidden rounded-none border border-line bg-[#f4faf2] p-3.5 shadow-sm"
+                  className="relative flex flex-col overflow-hidden rounded-none border border-line bg-[#f4faf2] p-3.5"
                 >
                   <span
                     aria-hidden="true"
@@ -323,7 +323,7 @@ function Services() {
                   as="li"
                   key={c.key}
                   delay={i * 0.06}
-                  className="relative flex flex-col overflow-hidden rounded-none border border-ink/20 bg-[#bef648] p-3.5 text-ink shadow-sm"
+                  className="relative flex flex-col overflow-hidden rounded-none border border-ink/20 bg-[#bef648] p-3.5 text-ink"
                 >
                   <span
                     aria-hidden="true"
@@ -350,7 +350,7 @@ function Services() {
                 as="li"
                 key={c.key}
                 delay={i * 0.06}
-                className="relative flex flex-col overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-3.5 text-card shadow-sm"
+                className="relative flex flex-col overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-3.5 text-card"
               >
                 <span
                   aria-hidden="true"
@@ -388,7 +388,7 @@ function Services() {
 
 function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="how-it-works" className="relative overflow-hidden py-12 sm:py-16">
       <span
         aria-hidden="true"
         className="orb-ambient absolute -left-24 top-16 h-80 w-80 rounded-full opacity-70"
@@ -407,7 +407,7 @@ function HowItWorks() {
 
 function Plans() {
   return (
-    <section id="plans" className="py-20 sm:py-28">
+    <section id="plans" className="py-12 sm:py-16">
       <div className={wrap}>
         <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-16">
           <h2 className={`${h2} max-w-[14ch]`}>{PLANS.heading}</h2>
@@ -423,16 +423,16 @@ function Plans() {
 
 function Validation() {
   return (
-    <section id="validation" className="py-20 sm:py-28">
+    <section id="validation" className="py-12 sm:py-16">
       <div className={wrap}>
         <Reveal>
           <h2 className={`${h2} max-w-[18ch]`}>
             Tested with the people <span className="text-gradient-luxury">who live the problem</span>.
           </h2>
         </Reveal>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {VALIDATION.cards.map((c, i) => (
-            <Reveal as="li" key={c.key} delay={i * 0.06} className="flex flex-col rounded-none border border-line bg-card p-3 shadow-sm">
+            <Reveal as="li" key={c.key} delay={i * 0.06} className="flex flex-col rounded-none border border-line bg-card p-3">
               {c.photo ? (
                 <Photo
                   src={c.photo.src}
@@ -443,7 +443,7 @@ function Validation() {
               ) : c.key === "farmers" ? (
                 <ValidationFarmerCard />
               ) : (
-                <div className="relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-none border border-white/10 bg-[#0e2a18] p-4 text-card sm:p-5 shadow-sm">
+                <div className="relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-none border border-white/10 bg-[#0e2a18] p-4 text-card sm:p-5">
                   <p className="relative z-10 inline-flex w-fit items-center gap-2 rounded-none border border-white/20 bg-white/10 px-3 py-1 text-[0.78rem] font-bold tracking-wider uppercase text-[#bef648]">
                     <span className="h-1.5 w-1.5 rounded-none bg-[#bef648]" aria-hidden="true" />
                     DOST-SEI Consultation
@@ -473,14 +473,14 @@ function Validation() {
           ))}
         </ul>
 
-        <Reveal className="relative mt-4 grid gap-8 overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-6 shadow-sm sm:p-10 lg:grid-cols-2 lg:gap-12">
+        <Reveal className="relative mt-4 grid gap-8 overflow-hidden rounded-none border border-white/10 bg-[#0b130e] p-6 sm:p-10 lg:grid-cols-2 lg:gap-12">
           {VALIDATION.quotes.map((q) => (
             <figure key={q.who} className="relative z-10 flex flex-col">
               <blockquote lang="fil" className="text-[1.35rem] font-medium leading-[1.4] tracking-[-0.01em] text-card sm:text-[1.6rem]">
                 “{q.fil}”
               </blockquote>
               <p className="mt-3 text-[1.02rem] text-[#C9D0C6]">{q.en}</p>
-              <figcaption className="mt-auto pt-5 text-[0.92rem] font-mono tracking-wider uppercase text-[#bef648]">
+              <figcaption className="mt-auto pt-5 text-[0.92rem] tracking-wider uppercase text-[#bef648]">
                 {q.who}
               </figcaption>
             </figure>
@@ -495,7 +495,7 @@ function Validation() {
 
 function Partnerships() {
   return (
-    <section id="partnerships" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="partnerships" className="relative overflow-hidden py-12 sm:py-16">
       <div className={`${wrap} relative z-10`}>
         <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-end lg:gap-16">
           <h2 className={`${h2} max-w-[14ch]`}>
@@ -503,9 +503,9 @@ function Partnerships() {
           </h2>
           <p className="max-w-[36rem] text-muted text-[1.0625rem] leading-relaxed">{PARTNERS.body}</p>
         </Reveal>
-        <ul className="mt-12 grid gap-3 md:grid-cols-2">
+        <ul className="mt-8 grid gap-3 md:grid-cols-2">
           {PARTNERS.list.map((p) => (
-            <li key={p.name} className="flex items-start gap-4 rounded-none border border-line bg-white/95 p-5 shadow-sm">
+            <li key={p.name} className="flex items-start gap-4 rounded-none border border-line bg-white/95 p-5">
               <span className="mt-1.5 h-3.5 w-3.5 shrink-0 rounded-none border-2 border-green bg-[#bef648]" aria-hidden="true" />
               <div>
                 <h3 className="text-[1.12rem] font-bold leading-snug tracking-[-0.015em] text-ink">{p.name}</h3>
@@ -529,15 +529,15 @@ const MEMBER_TONES = {
 
 function Team() {
   return (
-    <section id="team" className="py-20 sm:py-28">
+    <section id="team" className="py-12 sm:py-16">
       <div className={wrap}>
         <Reveal>
           <h2 className={h2}>
             The team behind <span className="text-gradient-luxury">CooPERA</span>.
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-4 lg:grid-cols-[1.05fr_1fr]">
-          <div className="relative overflow-hidden rounded-none border border-line bg-line shadow-sm">
+        <div className="mt-8 grid gap-4 lg:grid-cols-[1.05fr_1fr]">
+          <div className="relative overflow-hidden rounded-none border border-line bg-line">
             <Photo
               src={TEAM.photo.src}
               alt={TEAM.photo.alt}
@@ -553,11 +553,11 @@ function Team() {
             {TEAM.members.map((m) => (
               <li
                 key={m.name}
-                className="flex min-w-0 flex-col justify-between rounded-none border border-line bg-card p-4 sm:p-5 shadow-sm"
+                className="flex min-w-0 flex-col justify-between rounded-none border border-line bg-card p-4 sm:p-5"
               >
                 <span
                   aria-hidden="true"
-                  className={`inline-flex h-11 w-11 items-center justify-center rounded-none text-[0.92rem] font-mono font-bold tracking-wider ${MEMBER_TONES[m.tone]}`}
+                  className={`inline-flex h-11 w-11 items-center justify-center rounded-none text-[0.92rem] font-bold tracking-wider ${MEMBER_TONES[m.tone]}`}
                 >
                   {m.initials}
                 </span>
@@ -580,9 +580,9 @@ function Team() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden pb-16 pt-20 sm:pt-28">
+    <section id="contact" className="relative overflow-hidden pb-12 pt-12 sm:pt-16">
       <div className={`${wrap} relative z-10`}>
-        <div className="grid gap-10 border-t border-line pt-14 lg:grid-cols-[1.05fr_1fr] lg:items-start lg:gap-14">
+        <div className="grid gap-10 border-t border-line pt-10 lg:grid-cols-[1.05fr_1fr] lg:items-start lg:gap-14">
           <Reveal>
             <h2 className="max-w-[14ch] text-[clamp(2.4rem,5.4vw,4.4rem)] font-extrabold tracking-[-0.035em] text-ink">
               Ready to <span className="text-gradient-luxury">start a pilot</span>?
@@ -592,7 +592,7 @@ function Contact() {
               {CONTACT.pills.map((pill) => (
                 <li
                   key={pill}
-                  className="inline-flex items-center gap-2 rounded-none border border-line bg-white/95 px-3.5 py-1.5 text-[0.84rem] font-bold uppercase tracking-wider text-ink backdrop-blur-sm shadow-sm"
+                  className="inline-flex items-center gap-2 rounded-none border border-line bg-white/95 px-3.5 py-1.5 text-[0.84rem] font-bold uppercase tracking-wider text-ink backdrop-blur-sm"
                 >
                   <span className="h-2 w-2 rounded-none bg-green" aria-hidden="true" />
                   {pill}
@@ -613,7 +613,7 @@ function Footer() {
   return (
     <footer className="pb-8">
       <div className={wrap}>
-        <div className="cv-art relative h-[180px] overflow-hidden rounded-none border border-line sm:h-[260px] lg:h-[320px] shadow-sm">
+        <div className="cv-art relative h-[180px] overflow-hidden rounded-none border border-line sm:h-[260px] lg:h-[320px]">
           <TerrainBanner3D />
           <div
             aria-hidden="true"
@@ -629,7 +629,7 @@ function Footer() {
         </div>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-t border-line/60 pt-6">
           <Logo />
-          <p className="text-[0.92rem] font-mono uppercase tracking-wider text-muted">{FOOTER}</p>
+          <p className="text-[0.92rem] uppercase tracking-wider text-muted">{FOOTER}</p>
         </div>
       </div>
     </footer>

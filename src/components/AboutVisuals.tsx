@@ -28,7 +28,7 @@ export function MissionPanel({ text }: { text: string }) {
   const current = MISSION_MODES[mode];
 
   return (
-    <div className="relative overflow-hidden rounded-none border border-line bg-[#0b130e] p-5 text-card sm:p-8 lg:p-10 shadow-sm">
+    <div className="relative overflow-hidden rounded-none border border-line bg-[#0b130e] p-5 text-card sm:p-8 lg:p-10">
       <Image
         src="/stock/farmer-harvest.jpg"
         alt=""
@@ -42,14 +42,14 @@ export function MissionPanel({ text }: { text: string }) {
       />
 
       <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
-        <div className="flex flex-col justify-center rounded-none border border-white/60 bg-white/95 p-6 text-ink shadow-sm backdrop-blur-md sm:p-8">
+        <div className="flex flex-col justify-center rounded-none border border-white/60 bg-white/95 p-6 text-ink backdrop-blur-md sm:p-8">
           <p className="text-[0.88rem] font-bold uppercase tracking-wider text-green">Our mission</p>
           <p className="mt-3 text-[1.2rem] font-medium leading-[1.45] tracking-[-0.01em] text-ink sm:text-[1.4rem]">
             {text}
           </p>
         </div>
 
-        <div className="flex flex-col justify-between rounded-none border border-white/15 bg-[#0f2115] p-5 sm:p-6 shadow-sm">
+        <div className="flex flex-col justify-between rounded-none border border-white/15 bg-[#0f2115] p-5 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div
               className="inline-flex rounded-none border border-white/15 bg-white/5 p-1"
@@ -81,7 +81,7 @@ export function MissionPanel({ text }: { text: string }) {
                 With CooPERA
               </button>
             </div>
-            <span className="text-[0.82rem] font-mono tracking-wider uppercase text-[#bef648]">
+            <span className="text-[0.82rem] tracking-wider uppercase text-[#bef648]">
               {current.badge}
             </span>
           </div>
@@ -135,7 +135,7 @@ export function VisionPanel({ text }: { text: string }) {
   const stage = VISION_STAGES[stageIdx];
 
   return (
-    <div className="relative overflow-hidden rounded-none border border-line bg-[#0e2a18] p-5 text-card sm:p-8 lg:p-10 shadow-sm">
+    <div className="relative overflow-hidden rounded-none border border-line bg-[#0e2a18] p-5 text-card sm:p-8 lg:p-10">
       <Image
         src="/stock/rice-field.jpg"
         alt=""
@@ -149,16 +149,16 @@ export function VisionPanel({ text }: { text: string }) {
       />
 
       <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
-        <div className="flex flex-col justify-center rounded-none border border-white/60 bg-white/95 p-6 text-ink shadow-sm backdrop-blur-md sm:p-8">
+        <div className="flex flex-col justify-center rounded-none border border-white/60 bg-white/95 p-6 text-ink backdrop-blur-md sm:p-8">
           <p className="text-[0.88rem] font-bold uppercase tracking-wider text-green">Our vision</p>
           <p className="mt-3 text-[1.2rem] font-medium leading-[1.45] tracking-[-0.01em] text-ink sm:text-[1.4rem]">
             {text}
           </p>
         </div>
 
-        <div className="flex flex-col justify-between rounded-none border border-white/15 bg-[#0b1b11] p-5 sm:p-6 shadow-sm">
+        <div className="flex flex-col justify-between rounded-none border border-white/15 bg-[#0b1b11] p-5 sm:p-6">
           <div>
-            <p className="text-[0.82rem] font-mono tracking-wider uppercase text-[#bef648]">
+            <p className="text-[0.82rem] tracking-wider uppercase text-[#bef648]">
               Harvest-to-Receipt flow · Click a stage
             </p>
             <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">

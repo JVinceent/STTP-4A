@@ -26,7 +26,7 @@ export function AboutTabs({ tabs }: { tabs: Tab[] }) {
       <div
         role="tablist"
         aria-label="About CooPERA"
-        className="inline-flex w-full max-w-[520px] rounded-none border border-line bg-card p-1 sm:w-auto shadow-sm"
+        className="inline-flex w-full max-w-[520px] rounded-none border border-line bg-card p-1 sm:w-auto"
       >
         {tabs.map((t, i) => {
           const selected = i === index;
