@@ -21,8 +21,6 @@
 
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-chip: 0 1px 2px rgb(15 25 18 / 0.06), 0 12px 32px -8px rgb(15 25 18 / 0.16);
-  --shadow-soft: 0 1px 2px rgb(15 25 18 / 0.04), 0 24px 48px -24px rgb(15 25 18 / 0.16);
 }
 
 html {
@@ -59,7 +57,7 @@ p {
 }
 
 section[id] {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 72px;
 }
 
 :focus-visible {
@@ -139,7 +137,7 @@ section[id] {
 /* Floating 3D realistic spheres (with specular highlights & depth-of-field blur) */
 .sphere-3d-gloss {
   background: radial-gradient(circle at 32% 28%, #f7ffe3 0%, #bef648 30%, #4ade80 62%, #15803d 85%, #052e16 100%);
-  box-shadow: inset -6px -8px 16px rgba(5, 46, 22, 0.65), 0 20px 40px -10px rgba(11, 19, 14, 0.22);
+  box-shadow: none;
 }
 
 .sphere-3d-blur {

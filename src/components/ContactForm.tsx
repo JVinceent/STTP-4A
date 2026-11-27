@@ -113,7 +113,7 @@ export function ContactForm() {
       <div
         role="status"
         aria-live="polite"
-        className="rounded-none border border-line bg-card p-6 shadow-sm sm:p-8"
+        className="rounded-none border border-line bg-card p-6 sm:p-8"
       >
         <div className="flex items-center gap-3">
           <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-none bg-[#0b130e] text-[#bef648]">
@@ -158,7 +158,7 @@ export function ContactForm() {
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-6 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] shadow-sm"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-6 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98]"
           >
             {copied ? (
               <>
@@ -185,7 +185,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-none border border-line bg-card p-6 shadow-sm sm:p-8"
+      className="rounded-none border border-line bg-card p-6 sm:p-8"
     >
       <div className="space-y-5">
         <fieldset>
@@ -336,7 +336,7 @@ export function ContactForm() {
 
         <button
           type="submit"
-          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-none bg-[#0b130e] px-7 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] sm:w-auto shadow-sm"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-none bg-[#0b130e] px-7 text-[0.98rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98] sm:w-auto"
         >
           {CONTACT.cta} <IconArrow />
         </button>

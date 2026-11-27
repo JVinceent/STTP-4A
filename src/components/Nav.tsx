@@ -58,16 +58,16 @@ export function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 isolate transition-[background-color,box-shadow] duration-300 ${
-        scrolled || open ? "bg-paper/95 backdrop-blur-md shadow-[0_1px_0_0_var(--color-line)]" : "bg-paper"
+      className={`sticky top-0 z-50 isolate border-b transition-[background-color,border-color] duration-300 ${
+        scrolled || open ? "border-ink/10 bg-paper/80 backdrop-blur-xl backdrop-saturate-150" : "border-transparent bg-paper"
       }`}
     >
-      <nav aria-label="Main" className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Main" className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href="#home" className="inline-flex min-h-11 shrink-0 items-center rounded-none" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
-        <ul className="hidden items-center gap-1.5 lg:flex">
+        <ul className="hidden items-center gap-9 lg:flex">
           {NAV.map((item) => {
             const isActive = active === item.id;
             return (
@@ -75,10 +75,10 @@ export function Nav() {
                 <a
                   href={`#${item.id}`}
                   aria-current={isActive ? "location" : undefined}
-                  className={`inline-flex h-10 items-center rounded-none border px-4 text-[0.92rem] font-bold tracking-tight transition-[background-color,border-color,color,transform] duration-150 active:scale-[0.98] ${
+                  className={`relative inline-flex h-16 items-center text-[0.9rem] font-medium tracking-[0.01em] transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-[18px] after:h-px after:origin-left after:bg-ink after:transition-transform after:duration-300 ${
                     isActive
-                      ? "border-ink bg-ink text-card"
-                      : "border-line bg-card text-ink hover:border-ink"
+                      ? "text-ink after:scale-x-100"
+                      : "text-muted hover:text-ink after:scale-x-0 hover:after:scale-x-100"
                   }`}
                 >
                   {item.label}
@@ -92,18 +92,17 @@ export function Nav() {
           <a
             href="#contact"
             aria-current={active === "contact" ? "location" : undefined}
-            className={`hidden h-10 items-center rounded-none px-4 text-[0.92rem] font-bold transition-[background-color,color,transform] duration-150 active:scale-[0.98] sm:inline-flex ${
-              active === "contact"
-                ? "bg-accent text-ink ring-1 ring-ink"
-                : "bg-ink text-card hover:bg-[#1a281e]"
+            className={`group hidden h-10 items-center gap-2 rounded-none px-5 text-[0.88rem] font-medium tracking-[0.01em] transition-colors duration-200 sm:inline-flex ${
+              active === "contact" ? "bg-green text-card" : "bg-ink text-card hover:bg-green"
             }`}
           >
             Get in touch
+            <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </a>
           <button
             ref={menuButton}
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-none border border-line bg-card transition-transform duration-150 active:scale-[0.98] lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-none text-ink lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -120,8 +119,8 @@ export function Nav() {
         </div>
       </nav>
 
-      <div id="mobile-menu" hidden={!open} className="border-t border-line bg-paper lg:hidden">
-        <ul className="mx-auto flex max-w-[1280px] flex-col gap-1.5 px-4 py-4 sm:px-6">
+      <div id="mobile-menu" hidden={!open} className="bg-paper lg:hidden">
+        <ul className="mx-auto flex max-w-[1280px] flex-col px-4 py-2 sm:px-6">
           {NAV.map((item) => {
             const isActive = active === item.id;
             return (
@@ -130,8 +129,8 @@ export function Nav() {
                   href={`#${item.id}`}
                   onClick={() => setOpen(false)}
                   aria-current={isActive ? "location" : undefined}
-                  className={`flex h-11 items-center rounded-none border px-4 font-bold text-[0.95rem] ${
-                    isActive ? "border-ink bg-ink text-card" : "border-line bg-card text-ink"
+                  className={`flex h-12 items-center border-b border-ink/10 text-[1rem] font-medium ${
+                    isActive ? "text-ink" : "text-muted"
                   }`}
                 >
                   {item.label}
@@ -143,7 +142,7 @@ export function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 flex h-11 items-center justify-center rounded-none bg-ink font-bold text-card"
+              className="my-3 flex h-11 items-center justify-center rounded-none bg-ink font-medium text-card"
             >
               Get in touch
             </a>

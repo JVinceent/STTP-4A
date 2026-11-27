@@ -23,7 +23,7 @@ export function HowItWorksSection() {
 
   return (
     <div>
-      <div className="mt-10">
+      <div className="mt-8">
         <PickupMap
           farms={HOW.farms}
           selectedFarm={selectedFarm}
@@ -34,7 +34,7 @@ export function HowItWorksSection() {
 
       {/* Accessible farm selector bar below the 3D map */}
       <div className="mt-3 flex flex-wrap items-center gap-2" role="group" aria-label="Select a farm on the route">
-        <span className="mr-1 text-[0.88rem] font-mono tracking-wider uppercase text-muted">Inspect farmer payout:</span>
+        <span className="mr-1 text-[0.88rem] tracking-wider uppercase text-muted">Inspect farmer payout:</span>
         {HOW.farms.map((f) => {
           const active = f.n === selectedFarm;
           return (
@@ -50,14 +50,14 @@ export function HowItWorksSection() {
               }`}
             >
               <span
-                className={`inline-flex h-4 w-4 items-center justify-center rounded-none text-[0.72rem] font-mono font-bold ${
+                className={`inline-flex h-4 w-4 items-center justify-center rounded-none text-[0.72rem] font-bold ${
                   active ? "bg-[#bef648] text-ink" : "bg-paper text-green"
                 }`}
               >
                 {f.n}
               </span>
               <span>{f.farmer}</span>
-              <span className={`text-[0.8rem] font-mono ${active ? "text-[#D7DCD4]" : "text-muted"}`}>
+              <span className={`text-[0.8rem] ${active ? "text-[#D7DCD4]" : "text-muted"}`}>
                 ({(f.kg / 1000).toFixed(1)}t)
               </span>
             </button>
@@ -67,7 +67,7 @@ export function HowItWorksSection() {
 
       <div className="mt-4 grid gap-4 lg:grid-cols-2">
         {/* Manager card */}
-        <div className="flex flex-col rounded-none border border-line bg-card p-4 sm:p-5 shadow-sm">
+        <div className="flex flex-col rounded-none border border-line bg-card p-4 sm:p-5">
           <p className="rounded-none border border-line bg-paper py-3 text-center text-[1rem] font-bold uppercase tracking-wider text-ink">
             {HOW.manager.title}
           </p>
@@ -150,7 +150,7 @@ export function HowItWorksSection() {
                 <button
                   type="button"
                   onClick={() => setApproved(true)}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-5 text-[0.95rem] font-bold text-card shadow-sm transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98]"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-none bg-[#0b130e] px-5 text-[0.95rem] font-bold text-card transition-[background-color,transform] duration-150 hover:bg-[#1a281e] active:scale-[0.98]"
                 >
                   <IconCheck className="h-4 w-4 text-[#bef648]" />
                   {HOW.manager.action}
@@ -161,7 +161,7 @@ export function HowItWorksSection() {
         </div>
 
         {/* Farmer card */}
-        <div className="flex flex-col rounded-none border border-line bg-card p-4 sm:p-5 shadow-sm">
+        <div className="flex flex-col rounded-none border border-line bg-card p-4 sm:p-5">
           <p className="rounded-none border border-line bg-paper py-3 text-center text-[1rem] font-bold uppercase tracking-wider text-ink">
             {HOW.farmer.title} (Farm {farm.n} · {farm.farmer})
           </p>
@@ -188,7 +188,7 @@ export function HowItWorksSection() {
             </div>
           </dl>
 
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-none border border-white/10 bg-[#0b130e] p-4 text-card shadow-sm">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-none border border-white/10 bg-[#0b130e] p-4 text-card">
             <div>
               <p className="text-[1.02rem]">
                 Net payout{" "}
