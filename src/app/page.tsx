@@ -63,10 +63,12 @@ function Button({
   href,
   children,
   variant = "primary",
+  newTab = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: "primary" | "secondary" | "dark" | "lime";
+  newTab?: boolean;
 }) {
   const styles = {
     primary:
@@ -78,6 +80,7 @@ function Button({
   return (
     <a
       href={href}
+      {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={`inline-flex h-12 items-center justify-center gap-2 rounded-none px-6 text-[0.98rem] font-bold tracking-tight transition-[background-color,border-color,filter,transform] duration-150 active:scale-[0.98] ${styles}`}
     >
       {children}
@@ -118,10 +121,10 @@ function Hero() {
                 {HERO.body}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="#contact">
-                  Request a pilot <IconArrow />
+                <Button href="https://cooptima.vercel.app/" newTab>
+                  Watch the Demo Field <IconArrow />
                 </Button>
-                <Button href="#how-it-works" variant="secondary">
+                <Button href="/Cooptima_Demo_60s.mp4" variant="secondary" newTab>
                   See how it works
                 </Button>
               </div>
