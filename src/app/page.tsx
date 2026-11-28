@@ -121,10 +121,10 @@ function Hero() {
                 {HERO.body}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="https://cooptima.vercel.app/" newTab>
+                <Button href="/Cooptima_Demo_60s.mp4" newTab>
                   Watch the Demo Field <IconArrow />
                 </Button>
-                <Button href="/Cooptima_Demo_60s.mp4" variant="secondary" newTab>
+                <Button href="https://cooptima.vercel.app/" variant="secondary" newTab>
                   See how it works
                 </Button>
               </div>
