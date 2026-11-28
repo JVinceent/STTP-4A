@@ -14,7 +14,7 @@ export function LogoMark({ className = "h-10 w-10" }: { className?: string }) {
       alt=""
       width={512}
       height={512}
-      className={`${className} object-contain`}
+      className={`${className} block shrink-0 object-contain`}
       aria-hidden="true"
     />
   );
@@ -28,7 +28,7 @@ export function Logo({ tone = "light", className = "" }: LogoProps) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <LogoMark />
-      <span className="text-[1.45rem] font-extrabold leading-none tracking-[-0.03em]">
+      <span className="block text-[1.45rem] font-extrabold leading-none tracking-[-0.03em]">
         <span className="sr-only">CooPERA</span>
         <span aria-hidden="true" className={tone === "dark" ? "text-leaf" : "text-green"}>
           Coo
